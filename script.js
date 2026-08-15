@@ -1,75 +1,105 @@
-// ==========================================
-// GOOGLE APPS SCRIPT WEB APP URL
-// ==========================================
+/* ==========================================
+   GOOGLE APPS SCRIPT
+========================================== */
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxriQkjiGf7D47MaPCBPzKeUuZ-zdFn1jW8w2UhvgcjxI1HUcEmpvGfA07VhWgWaXrYfg/exec";
 
 
-// ==========================================
-// COUNTDOWN
-// ==========================================
+/* ==========================================
+   COUNTDOWN
+========================================== */
 
 const eventDate = new Date(
-  "September 6, 2026 12:30:00"
-).getTime();
+  2026,
+  8,
+  6,
+  12,
+  30,
+  0
+);
+
 
 function updateCountdown() {
 
-  const now = new Date().getTime();
+  const now = new Date();
 
-  const distance = eventDate - now;
+  let difference =
+    eventDate.getTime() - now.getTime();
 
-  if (distance <= 0) {
 
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+  if (difference <= 0) {
+
+    setCountdownValue("days", 0);
+    setCountdownValue("hours", 0);
+    setCountdownValue("minutes", 0);
+    setCountdownValue("seconds", 0);
 
     return;
   }
 
-  const days = Math.floor(
-    distance / (1000 * 60 * 60 * 24)
-  );
 
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) /
-    (1000 * 60 * 60)
-  );
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
 
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) /
-    (1000 * 60)
-  );
 
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) /
-    1000
-  );
+  const hours =
+    Math.floor(
+      (difference %
+        (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
-  document.getElementById("days").textContent =
-    String(days).padStart(2, "0");
 
-  document.getElementById("hours").textContent =
-    String(hours).padStart(2, "0");
+  const minutes =
+    Math.floor(
+      (difference %
+        (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
-  document.getElementById("minutes").textContent =
-    String(minutes).padStart(2, "0");
 
-  document.getElementById("seconds").textContent =
-    String(seconds).padStart(2, "0");
+  const seconds =
+    Math.floor(
+      (difference %
+        (1000 * 60)) /
+        1000
+    );
+
+
+  setCountdownValue("days", days);
+  setCountdownValue("hours", hours);
+  setCountdownValue("minutes", minutes);
+  setCountdownValue("seconds", seconds);
 }
+
+
+function setCountdownValue(id, value) {
+
+  const element =
+    document.getElementById(id);
+
+  if (!element) return;
+
+  element.textContent =
+    String(value).padStart(2, "0");
+}
+
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+  updateCountdown,
+  1000
+);
 
 
-// ==========================================
-// RSVP FORM
-// ==========================================
+/* ==========================================
+   RSVP
+========================================== */
 
 const rsvpForm =
   document.getElementById("rsvpForm");
@@ -84,61 +114,88 @@ const formMessage =
   document.getElementById("formMessage");
 
 
-// Show / hide adult & children fields
+/* ==========================================
+   SHOW / HIDE GUEST COUNT
+========================================== */
 
 const rsvpOptions =
   document.querySelectorAll(
     'input[name="rsvp"]'
   );
 
+
 rsvpOptions.forEach(option => {
 
-  option.addEventListener("change", function () {
+  option.addEventListener(
+    "change",
+    function () {
 
-    if (this.value === "Yes") {
+      if (this.value === "Yes") {
 
-      guestNumbers.style.display = "grid";
+        guestNumbers.style.display =
+          "grid";
 
-    } else {
+      } else {
 
-      guestNumbers.style.display = "none";
+        guestNumbers.style.display =
+          "none";
+
+      }
 
     }
-
-  });
+  );
 
 });
 
 
-// ==========================================
-// SUBMIT RSVP
-// ==========================================
+/* ==========================================
+   RSVP SUBMISSION
+========================================== */
 
 rsvpForm.addEventListener(
   "submit",
-  async function (event) {
+  async function(event) {
 
     event.preventDefault();
 
+
     const guestName =
-      document.getElementById("guestName").value.trim();
+      document
+        .getElementById("guestName")
+        .value
+        .trim();
+
 
     const rsvp =
       document.querySelector(
         'input[name="rsvp"]:checked'
       )?.value;
 
+
     const adults =
-      document.getElementById("adults").value;
+      document.getElementById(
+        "adults"
+      ).value;
+
 
     const children =
-      document.getElementById("children").value;
+      document.getElementById(
+        "children"
+      ).value;
+
 
     const phone =
-      document.getElementById("phone").value.trim();
+      document
+        .getElementById("phone")
+        .value
+        .trim();
+
 
     const message =
-      document.getElementById("message").value.trim();
+      document
+        .getElementById("message")
+        .value
+        .trim();
 
 
     if (!guestName || !rsvp) {
@@ -152,8 +209,9 @@ rsvpForm.addEventListener(
 
     submitButton.disabled = true;
 
-    submitButton.textContent =
-      "SENDING...";
+    submitButton.innerHTML =
+      "<span>SENDING...</span><b>...</b>";
+
 
     formMessage.textContent = "";
 
@@ -201,36 +259,58 @@ rsvpForm.addEventListener(
 
 
       formMessage.textContent =
-        "Thank you! Your RSVP has been received. 💕";
+        "Thank you! Your RSVP has been received. ♥";
+
 
       formMessage.style.color =
-        "#8e5968";
+        "#754957";
 
 
       rsvpForm.reset();
+
 
       guestNumbers.style.display =
         "grid";
 
 
-      submitButton.textContent =
-        "RSVP RECEIVED";
+      submitButton.disabled =
+        false;
+
+
+      submitButton.innerHTML =
+        "<span>RSVP RECEIVED</span><b>✓</b>";
+
+
+      setTimeout(() => {
+
+        submitButton.innerHTML =
+          "<span>SEND RSVP</span><b>→</b>";
+
+      }, 3500);
 
 
     } catch (error) {
 
-      console.error(error);
+      console.error(
+        "RSVP Error:",
+        error
+      );
+
 
       formMessage.textContent =
         "Something went wrong. Please try again.";
 
+
       formMessage.style.color =
-        "#a65d68";
+        "#a34e5d";
 
-      submitButton.disabled = false;
 
-      submitButton.textContent =
-        "SEND RSVP";
+      submitButton.disabled =
+        false;
+
+
+      submitButton.innerHTML =
+        "<span>SEND RSVP</span><b>→</b>";
 
     }
 
