@@ -1,885 +1,1531 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
 
-<head>
+  --pink: #d94f8b;
 
-  <meta charset="UTF-8">
+  --deep-purple: #6d3b83;
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  --dark-purple: #4b285c;
 
-  <title>Mahima Sankurathri | First Birthday</title>
+  --lavender: #b99ad8;
 
-  <meta
-    name="description"
-    content="You are invited to celebrate Mahima Sankurathri's first birthday."
-  >
+  --light-lavender: #f2eafa;
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  --cream: #fffaf7;
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  --gold: #c69b4a;
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Italiana&family=Parisienne&display=swap"
-    rel="stylesheet"
-  >
+  --gold-light: #dfc98f;
 
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  >
-
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-  <div class="hero-frame"></div>
-
-
-  <div class="butterfly butterfly-a">
-    🦋
-  </div>
-
-  <div class="butterfly butterfly-b">
-    🦋
-  </div>
-
-  <div class="butterfly butterfly-c">
-    🦋
-  </div>
-
-
-  <div class="hero-content">
-
-
-    <div class="top-label">
-
-      <span></span>
-
-      YOU ARE INVITED
-
-      <span></span>
-
-    </div>
-
-
-    <p class="hero-small">
-      A BEAUTIFUL DAY TO CELEBRATE
-    </p>
-
-
-    <h1 class="hero-name">
-
-      <span class="mahima">
-        Mahima
-      </span>
-
-      <span class="sankurathri">
-        SANKURATHRI
-      </span>
-
-    </h1>
-
-
-    <div class="name-divider">
-
-      <span></span>
-
-      <b>✦</b>
-
-      <span></span>
-
-    </div>
-
-
-    <p class="turning">
-
-      IS TURNING
-
-      <strong>
-        ONE
-      </strong>
-
-    </p>
-
-
-    <!-- DATE / TIME -->
-
-    <div class="hero-date">
-
-
-      <div class="date-block">
-
-        <small>
-          DATE
-        </small>
-
-        <strong>
-          SEPTEMBER 6, 2026
-        </strong>
-
-        <small>
-          SUNDAY
-        </small>
-
-      </div>
-
-
-      <div class="date-line"></div>
-
-
-      <div class="date-block time-block">
-
-        <small>
-          TIME
-        </small>
-
-        <strong>
-          12:30 PM
-        </strong>
-
-      </div>
-
-
-    </div>
-
-
-    <!-- LOCATION -->
-
-    <div class="hero-location">
-
-
-      <div class="location-pin">
-        ♡
-      </div>
-
-
-      <div class="location-details">
-
-
-        <small>
-          CELEBRATION VENUE
-        </small>
-
-
-        <a
-          class="venue-name"
-          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          William L. Patena Community Center
-        </a>
-
-
-        <p class="address">
-
-          10675 E. Mary Katherine Dr.<br>
-
-          Mesa, AZ 85209
-
-        </p>
-
-
-        <a
-          class="maps-button"
-          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <span>
-            VIEW ON GOOGLE MAPS
-          </span>
-
-          <b>
-            ↗
-          </b>
-
-        </a>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- RSVP BUTTON -->
-
-    <div class="hero-rsvp-wrapper">
-
-      <a
-        href="#rsvp"
-        class="hero-button"
-      >
-
-        RSVP
-
-        <b>
-          →
-        </b>
-
-      </a>
-
-    </div>
-
-
-  </div>
-
-
-  <div class="scroll-indicator">
-
-    <span></span>
-
-    SCROLL TO EXPLORE
-
-    <span></span>
-
-  </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     COUNTDOWN
-===================================================== -->
-
-<section class="countdown-section">
-
-
-  <div class="countdown-inner">
-
-
-    <div class="countdown-top">
-
-      <p class="eyebrow">
-        ONE LITTLE YEAR
-      </p>
-
-
-      <h2>
-
-        One little year,
-
-        <em>
-          beautiful memories.
-        </em>
-
-      </h2>
-
-    </div>
-
-
-    <div class="countdown">
-
-
-      <div class="count-item">
-
-        <strong id="days">
-          00
-        </strong>
-
-        <span>
-          DAYS
-        </span>
-
-      </div>
-
-
-      <div class="count-separator">
-        :
-      </div>
-
-
-      <div class="count-item">
-
-        <strong id="hours">
-          00
-        </strong>
-
-        <span>
-          HOURS
-        </span>
-
-      </div>
-
-
-      <div class="count-separator">
-        :
-      </div>
-
-
-      <div class="count-item">
-
-        <strong id="minutes">
-          00
-        </strong>
-
-        <span>
-          MINUTES
-        </span>
-
-      </div>
-
-
-      <div class="count-separator">
-        :
-      </div>
-
-
-      <div class="count-item">
-
-        <strong id="seconds">
-          00
-        </strong>
-
-        <span>
-          SECONDS
-        </span>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="memory-divider">
-
-      <span></span>
-
-      <b>
-        🦋
-      </b>
-
-      <span></span>
-
-    </div>
-
-
-    <div class="memory-section">
-
-
-      <p class="memory-label">
-        A YEAR OF LOVE
-      </p>
-
-
-      <h3>
-
-        From tiny moments
-
-        <em>
-          to beautiful memories.
-        </em>
-
-      </h3>
-
-
-      <p class="memory-text">
-
-        One little year filled with smiles,
-        cuddles, laughter and countless
-        beautiful moments.
-
-        Now it's time to celebrate our
-        little butterfly's first wonderful year.
-
-      </p>
-
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     RSVP
-===================================================== -->
-
-<section
-  class="section rsvp"
-  id="rsvp"
->
-
-
-  <div class="section-number">
-    03
-  </div>
-
-
-  <div class="rsvp-layout">
-
-
-    <!-- RSVP INTRO -->
-
-    <div class="rsvp-intro">
-
-
-      <p class="eyebrow">
-        WE'D LOVE TO HAVE YOU
-      </p>
-
-
-      <h2>
-        RSVP
-      </h2>
-
-
-      <p>
-
-        Your presence would make
-        Mahima's special day even
-        more beautiful.
-
-        Please let us know if
-        you'll be joining us.
-
-      </p>
-
-
-      <div class="rsvp-flower">
-        ✦
-      </div>
-
-
-    </div>
-
-
-
-    <!-- RSVP FORM -->
-
-    <div class="rsvp-card">
-
-
-      <form id="rsvpForm">
-
-
-        <!-- NAME -->
-
-        <div class="field">
-
-
-          <label>
-            GUEST NAME
-          </label>
-
-
-          <input
-            type="text"
-            id="guestName"
-            name="guestName"
-            placeholder="Your name"
-            required
-          >
-
-
-        </div>
-
-
-
-        <!-- RSVP -->
-
-        <div class="field">
-
-
-          <label>
-            WILL YOU BE JOINING US?
-          </label>
-
-
-          <div class="choice-grid">
-
-
-            <label class="choice">
-
-
-              <input
-                type="radio"
-                name="rsvp"
-                value="yes"
-                required
-              >
-
-
-              <span>
-
-                YES, I'LL BE THERE
-
-                <small>
-                  Can't wait!
-                </small>
-
-              </span>
-
-
-            </label>
-
-
-
-            <label class="choice">
-
-
-              <input
-                type="radio"
-                name="rsvp"
-                value="no"
-              >
-
-
-              <span>
-
-                SORRY, CAN'T MAKE IT
-
-                <small>
-                  Sending our love
-                </small>
-
-              </span>
-
-
-            </label>
-
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- GUEST COUNT -->
-
-        <!-- IMPORTANT:
-             Hidden by default.
-             JavaScript adds .show when YES is selected.
-        -->
-
-        <div
-          class="guest-grid"
-          id="guestCountSection"
-        >
-
-
-          <div class="field">
-
-
-            <label>
-              ADULTS
-            </label>
-
-
-            <input
-              type="number"
-              id="adults"
-              name="adults"
-              min="1"
-              value="1"
-            >
-
-
-          </div>
-
-
-
-          <div class="field">
-
-
-            <label>
-              CHILDREN
-            </label>
-
-
-            <input
-              type="number"
-              id="children"
-              name="children"
-              min="0"
-              value="0"
-            >
-
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- PHONE -->
-
-        <div class="field">
-
-
-          <label>
-
-            PHONE
-
-            <small>
-              OPTIONAL
-            </small>
-
-          </label>
-
-
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Phone number"
-          >
-
-
-        </div>
-
-
-
-        <!-- MESSAGE -->
-
-        <div class="field">
-
-
-          <label>
-
-            MESSAGE
-
-            <small>
-              OPTIONAL
-            </small>
-
-          </label>
-
-
-          <textarea
-            id="message"
-            name="message"
-            rows="3"
-            placeholder="Leave a little note for Mahima..."
-          ></textarea>
-
-
-        </div>
-
-
-
-        <!-- SUBMIT -->
-
-        <button
-          type="submit"
-          class="submit-button"
-        >
-
-          <span>
-            SEND RSVP
-          </span>
-
-          <b>
-            →
-          </b>
-
-        </button>
-
-
-        <div
-          class="form-message"
-          id="formMessage"
-        ></div>
-
-
-      </form>
-
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-
-  <div class="footer-art">
-    🦋
-  </div>
-
-
-  <p class="footer-label">
-    WITH LOVE,
-  </p>
-
-
-  <h2>
-    Sankurathri's Family
-  </h2>
-
-
-  <p>
-    We can't wait to celebrate with you.
-  </p>
-
-
-  <div class="footer-line">
-
-    <span></span>
-
-    ✦
-
-    <span></span>
-
-  </div>
-
-
-</footer>
-
-
-
-<!-- =====================================================
-     COUNTDOWN
-===================================================== -->
-
-<script>
-
-const birthdayDate =
-  new Date(
-    "September 6, 2026 12:30:00"
-  ).getTime();
-
-
-function updateCountdown() {
-
-
-  const now =
-    new Date().getTime();
-
-
-  const distance =
-    birthdayDate - now;
-
-
-  if (distance <= 0) {
-
-
-    document.getElementById("days")
-      .textContent = "00";
-
-
-    document.getElementById("hours")
-      .textContent = "00";
-
-
-    document.getElementById("minutes")
-      .textContent = "00";
-
-
-    document.getElementById("seconds")
-      .textContent = "00";
-
-
-    return;
-
-  }
-
-
-  const days =
-    Math.floor(
-      distance /
-      (1000 * 60 * 60 * 24)
-    );
-
-
-  const hours =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60 * 60 * 24)
-      ) /
-      (1000 * 60 * 60)
-    );
-
-
-  const minutes =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60 * 60)
-      ) /
-      (1000 * 60)
-    );
-
-
-  const seconds =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60)
-      ) /
-      1000
-    );
-
-
-  document.getElementById("days")
-    .textContent =
-    String(days).padStart(2, "0");
-
-
-  document.getElementById("hours")
-    .textContent =
-    String(hours).padStart(2, "0");
-
-
-  document.getElementById("minutes")
-    .textContent =
-    String(minutes).padStart(2, "0");
-
-
-  document.getElementById("seconds")
-    .textContent =
-    String(seconds).padStart(2, "0");
+  --text: #5b4663;
 
 }
 
 
-updateCountdown();
-
-setInterval(
-  updateCountdown,
-  1000
-);
-
-</script>
+* {
+  box-sizing: border-box;
+}
 
 
-<script src="script.js"></script>
+html {
+  scroll-behavior: smooth;
+}
 
 
-</body>
+body {
 
-</html>
+  margin: 0;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(238, 186, 220, .45),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(188, 164, 228, .35),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fffaf8,
+      #f8effa 50%,
+      #fff8f6
+    );
+
+  font-family: "Montserrat", sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+
+body::before,
+body::after {
+
+  content: "✦";
+
+  position: fixed;
+
+  color: rgba(
+    198,
+    155,
+    74,
+    .25
+  );
+
+  font-size: 34px;
+
+  z-index: -1;
+
+}
+
+
+body::before {
+
+  left: 4%;
+
+  top: 25%;
+
+}
+
+
+body::after {
+
+  right: 5%;
+
+  top: 60%;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+  min-height: 100vh;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 40px 18px;
+
+  position: relative;
+
+}
+
+
+.hero-card {
+
+  width: min(
+    720px,
+    94vw
+  );
+
+  min-height: 680px;
+
+  padding: 65px 34px 54px;
+
+  text-align: center;
+
+  border: 1px solid
+    rgba(
+      198,
+      155,
+      74,
+      .75
+    );
+
+  border-radius:
+    48% 48% 12% 12%
+    /
+    20% 20% 10% 10%;
+
+  background:
+    rgba(
+      255,
+      250,
+      247,
+      .93
+    );
+
+  box-shadow:
+    0 24px 80px
+    rgba(
+      109,
+      59,
+      131,
+      .16
+    );
+
+  position: relative;
+
+}
+
+
+.hero-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 1px solid
+    rgba(
+      198,
+      155,
+      74,
+      .38
+    );
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+}
+
+
+.eyebrow,
+.section-kicker {
+
+  letter-spacing: .24em;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color:
+    var(--deep-purple);
+
+}
+
+
+.gold-line {
+
+  width: 90px;
+
+  height: 1px;
+
+  background:
+    var(--gold);
+
+  margin: 18px auto;
+
+}
+
+
+h1 {
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(
+      86px,
+      17vw,
+      150px
+    );
+
+  line-height: .9;
+
+  color:
+    var(--pink);
+
+  font-weight: 400;
+
+  margin:
+    10px 0 0;
+
+}
+
+
+h2 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  color:
+    var(--deep-purple);
+
+}
+
+
+.hero-card h2 {
+
+  font-size:
+    clamp(
+      32px,
+      6vw,
+      52px
+    );
+
+  margin:
+    8px 0 22px;
+
+}
+
+
+.ribbon {
+
+  display:
+    inline-block;
+
+  padding:
+    13px 44px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #c2a0dc,
+      #9d72bf,
+      #c2a0dc
+    );
+
+  color:
+    white;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  border:
+    1px solid
+    #d1b17a;
+
+  box-shadow:
+    0 8px 18px
+    rgba(
+      109,
+      59,
+      131,
+      .16
+    );
+
+}
+
+
+.intro {
+
+  max-width: 520px;
+
+  margin:
+    24px auto;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+
+}
+
+
+/* =====================================================
+   HERO DATE
+===================================================== */
+
+.hero-date {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+
+  margin:
+    25px auto 25px;
+
+}
+
+
+.hero-date > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+}
+
+
+.hero-date span {
+
+  font-size: 9px;
+
+  letter-spacing: .22em;
+
+  color:
+    #866f8d;
+
+}
+
+
+.hero-date strong {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  color:
+    var(--deep-purple);
+
+}
+
+
+.hero-date-divider {
+
+  width: 1px;
+
+  height: 45px;
+
+  background:
+    var(--gold);
+
+  opacity: .65;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn,
+.secondary-btn {
+
+  display:
+    inline-block;
+
+  text-decoration:
+    none;
+
+  border-radius:
+    999px;
+
+  padding:
+    14px 24px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .06em;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform .2s,
+    box-shadow .2s;
+
+}
+
+
+.primary-btn {
+
+  color:
+    white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d94f8b,
+      #7d4b9a
+    );
+
+  border:
+    0;
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      125,
+      75,
+      154,
+      .25
+    );
+
+}
+
+
+.primary-btn:hover,
+.secondary-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+.scroll-link {
+
+  display:
+    block;
+
+  margin-top:
+    18px;
+
+  color:
+    var(--deep-purple);
+
+  text-decoration:
+    none;
+
+  font-size:
+    13px;
+
+}
+
+
+/* =====================================================
+   BUTTERFLIES
+===================================================== */
+
+.butterfly {
+
+  position:
+    absolute;
+
+  font-size:
+    clamp(
+      28px,
+      5vw,
+      58px
+    );
+
+  animation:
+    float 5s
+    ease-in-out
+    infinite;
+
+  filter:
+    drop-shadow(
+      0 5px 7px
+      rgba(
+        109,
+        59,
+        131,
+        .18
+      )
+    );
+
+}
+
+
+.butterfly-1 {
+
+  left: 8%;
+
+  top: 15%;
+
+}
+
+
+.butterfly-2 {
+
+  right: 8%;
+
+  top: 24%;
+
+  animation-delay:
+    1.3s;
+
+}
+
+
+.butterfly-3 {
+
+  left: 13%;
+
+  bottom: 13%;
+
+  animation-delay:
+    2.2s;
+
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-5deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-18px)
+      rotate(5deg);
+
+  }
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.section {
+
+  width:
+    min(
+      1050px,
+      92vw
+    );
+
+  margin:
+    0 auto;
+
+  padding:
+    92px 0;
+
+  text-align:
+    center;
+
+}
+
+
+.details h2,
+.rsvp-section h2,
+.closing h2 {
+
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      64px
+    );
+
+  margin:
+    8px 0 14px;
+
+}
+
+
+.quote {
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  color:
+    #7c5293;
+
+  font-size:
+    clamp(
+      26px,
+      4vw,
+      38px
+    );
+
+  line-height:
+    1.35;
+
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:
+    18px;
+
+  margin-top:
+    45px;
+
+}
+
+
+.info-card {
+
+  padding:
+    28px 20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .68
+    );
+
+  border:
+    1px solid
+    rgba(
+      198,
+      155,
+      74,
+      .45
+    );
+
+  border-radius:
+    24px;
+
+}
+
+
+.icon {
+
+  font-size:
+    35px;
+
+  color:
+    var(--pink);
+
+}
+
+
+.info-card h3 {
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    .2em;
+
+  color:
+    var(--deep-purple);
+
+}
+
+
+.info-card p {
+
+  line-height:
+    1.65;
+
+  font-size:
+    14px;
+
+}
+
+
+.actions {
+
+  margin-top:
+    28px;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  flex-wrap:
+    wrap;
+
+}
+
+
+.secondary-btn {
+
+  color:
+    var(--deep-purple);
+
+  border:
+    1px solid
+    rgba(
+      109,
+      59,
+      131,
+      .4
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .7
+    );
+
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown-section {
+
+  padding:
+    90px 20px;
+
+  text-align:
+    center;
+
+  color:
+    white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4d285e,
+      #6d3b83 50%,
+      #512f62
+    );
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+}
+
+
+.countdown-section .section-kicker {
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.countdown-section h2 {
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      65px
+    );
+
+  margin:
+    8px 0 10px;
+
+}
+
+
+.countdown-section h2 span {
+
+  display:
+    block;
+
+  color:
+    #e7c9dc;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-weight:
+    400;
+
+}
+
+
+.countdown-subtitle {
+
+  max-width:
+    560px;
+
+  margin:
+    15px auto 35px;
+
+  color:
+    #eaddea;
+
+  line-height:
+    1.7;
+
+  font-size:
+    14px;
+
+}
+
+
+.countdown {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        90px,
+        130px
+      )
+    );
+
+  justify-content:
+    center;
+
+  gap:
+    18px;
+
+}
+
+
+.count-box {
+
+  padding:
+    22px 12px;
+
+  border:
+    1px solid
+    rgba(
+      223,
+      201,
+      143,
+      .45
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .07
+    );
+
+  border-radius:
+    18px;
+
+  backdrop-filter:
+    blur(5px);
+
+}
+
+
+.count-box strong {
+
+  display:
+    block;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    50px;
+
+  line-height:
+    1;
+
+  color:
+    white;
+
+}
+
+
+.count-box span {
+
+  display:
+    block;
+
+  margin-top:
+    8px;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    .2em;
+
+  color:
+    #dfc98f;
+
+}
+
+
+.countdown-butterfly {
+
+  font-size:
+    45px;
+
+  margin-top:
+    30px;
+
+  opacity:
+    .65;
+
+  animation:
+    float 4s
+    ease-in-out
+    infinite;
+
+}
+
+
+/* =====================================================
+   RSVP
+===================================================== */
+
+.rsvp-section {
+
+  max-width:
+    760px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .55
+    );
+
+  border:
+    1px solid
+    rgba(
+      198,
+      155,
+      74,
+      .35
+    );
+
+  border-radius:
+    36px;
+
+  padding:
+    64px 30px;
+
+}
+
+
+.section-subtitle {
+
+  line-height:
+    1.7;
+
+}
+
+
+.rsvp-form {
+
+  text-align:
+    left;
+
+  margin-top:
+    32px;
+
+}
+
+
+.field {
+
+  margin-bottom:
+    20px;
+
+}
+
+
+.field label {
+
+  display:
+    block;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  margin-bottom:
+    8px;
+
+  color:
+    var(--deep-purple);
+
+}
+
+
+.field label span {
+
+  font-weight:
+    400;
+
+  opacity:
+    .65;
+
+}
+
+
+input,
+textarea {
+
+  width:
+    100%;
+
+  border:
+    1px solid
+    #dccfe3;
+
+  border-radius:
+    14px;
+
+  padding:
+    14px 15px;
+
+  font:
+    inherit;
+
+  color:
+    var(--text);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .86
+    );
+
+  outline:
+    none;
+
+}
+
+
+input:focus,
+textarea:focus {
+
+  border-color:
+    #a77bc2;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      167,
+      123,
+      194,
+      .12
+    );
+
+}
+
+
+.choice-row {
+
+  display:
+    grid;
+
+  gap:
+    10px;
+
+}
+
+
+.choice {
+
+  display:
+    flex !important;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    14px;
+
+  border:
+    1px solid
+    #dccfe3;
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .72
+    );
+
+  cursor:
+    pointer;
+
+  transition:
+    .2s ease;
+
+}
+
+
+.choice:hover {
+
+  border-color:
+    var(--lavender);
+
+  background:
+    rgba(
+      242,
+      234,
+      250,
+      .8
+    );
+
+}
+
+
+.choice input {
+
+  width:
+    auto;
+
+}
+
+
+.two-col {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    16px;
+
+}
+
+
+/* =====================================================
+   HIDE GUEST FIELDS
+===================================================== */
+
+.hidden {
+
+  display:
+    none !important;
+
+}
+
+
+.submit-btn {
+
+  width:
+    100%;
+
+  font-size:
+    14px;
+
+}
+
+
+.form-status {
+
+  text-align:
+    center;
+
+  min-height:
+    22px;
+
+  font-weight:
+    600;
+
+  margin-top:
+    15px;
+
+}
+
+
+.privacy-note {
+
+  margin-top:
+    18px;
+
+  font-size:
+    11px;
+
+  opacity:
+    .65;
+
+}
+
+
+/* =====================================================
+   CLOSING
+===================================================== */
+
+.closing {
+
+  padding-bottom:
+    110px;
+
+}
+
+
+.floral {
+
+  color:
+    var(--pink);
+
+  letter-spacing:
+    .6em;
+
+  font-size:
+    25px;
+
+}
+
+
+.closing h2 {
+
+  margin-top:
+    15px;
+
+}
+
+
+.closing p {
+
+  font-size:
+    14px;
+
+}
+
+
+.big-butterfly {
+
+  font-size:
+    76px;
+
+  animation:
+    float 4s
+    ease-in-out
+    infinite;
+
+  margin:
+    24px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+  text-align:
+    center;
+
+  padding:
+    28px;
+
+  font-size:
+    12px;
+
+  color:
+    #816d89;
+
+  border-top:
+    1px solid
+    rgba(
+      198,
+      155,
+      74,
+      .25
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+  .hero-card {
+
+    min-height:
+      620px;
+
+    padding:
+      58px 22px 44px;
+
+    border-radius:
+      42% 42% 10% 10%
+      /
+      15% 15% 8% 8%;
+
+  }
+
+
+  .hero-date {
+
+    gap:
+      15px;
+
+  }
+
+
+  .hero-date strong {
+
+    font-size:
+      18px;
+
+  }
+
+
+  .hero-date-divider {
+
+    height:
+      38px;
+
+  }
+
+
+  .info-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .countdown {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:
+      12px;
+
+  }
+
+
+  .count-box strong {
+
+    font-size:
+      42px;
+
+  }
+
+
+  .two-col {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:
+      10px;
+
+  }
+
+
+  .butterfly-1 {
+
+    left:
+      2%;
+
+    top:
+      10%;
+
+  }
+
+
+  .butterfly-2 {
+
+    right:
+      2%;
+
+    top:
+      20%;
+
+  }
+
+
+  .butterfly-3 {
+
+    left:
+      3%;
+
+    bottom:
+      8%;
+
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+
+  .hero-date {
+
+    flex-direction:
+      column;
+
+    gap:
+      8px;
+
+  }
+
+
+  .hero-date-divider {
+
+    width:
+      55px;
+
+    height:
+      1px;
+
+  }
+
+
+  .countdown-section {
+
+    padding:
+      75px 15px;
+
+  }
+
+
+  .rsvp-section {
+
+    padding:
+      50px 20px;
+
+  }
+
+}
