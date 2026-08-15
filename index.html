@@ -435,7 +435,19 @@
     <div class="rsvp-card">
 
 
-      <form id="rsvpForm">
+      <!--
+        IMPORTANT:
+        novalidate prevents browser native validation
+        from blocking the hidden Adults field when
+        "Sorry, can't make it" is selected.
+
+        Validation is handled by script.js.
+      -->
+
+      <form
+        id="rsvpForm"
+        novalidate
+      >
 
 
         <!-- Guest Name -->
@@ -451,7 +463,6 @@
             id="guestName"
             name="guestName"
             placeholder="Your name"
-            required
           >
 
         </div>
@@ -470,13 +481,14 @@
           <div class="choice-grid">
 
 
+            <!-- YES -->
+
             <label class="choice">
 
               <input
                 type="radio"
                 name="rsvp"
                 value="yes"
-                required
               >
 
               <span>
@@ -491,6 +503,8 @@
 
             </label>
 
+
+            <!-- NO -->
 
             <label class="choice">
 
@@ -522,9 +536,10 @@
         <!-- =================================================
              GUEST COUNT
 
-             IMPORTANT:
-             Hidden by default.
-             JavaScript shows this when YES is selected.
+             Hidden + DISABLED by default.
+
+             JavaScript enables these fields only when
+             YES is selected.
         ================================================== -->
 
         <div
@@ -548,6 +563,7 @@
               name="adults"
               min="1"
               value="1"
+              disabled
             >
 
           </div>
@@ -567,6 +583,7 @@
               name="children"
               min="0"
               value="0"
+              disabled
             >
 
           </div>
@@ -643,6 +660,8 @@
 
         </button>
 
+
+        <!-- Form Message -->
 
         <div
           class="form-message"
