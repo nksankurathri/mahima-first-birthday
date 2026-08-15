@@ -1,25 +1,25 @@
 :root {
-  --ivory: #fffaf7;
-  --ivory-deep: #fdf1f3;
+  --ivory: #fbf5f0;
+  --ivory-deep: #f4e8e8;
 
-  --blush: #e9a8b7;
-  --blush-light: #f6d8df;
-  --blush-deep: #c97891;
+  --blush: #c98c9f;
+  --blush-light: #e6c1cc;
+  --blush-deep: #a65f78;
 
-  --lilac: #b9a8d8;
-  --lilac-light: #eee7f7;
-  --lilac-deep: #80669e;
+  --lilac: #b5a0c2;
+  --lilac-light: #d8cbe0;
+  --lilac-deep: #735b82;
 
-  --sage: #a9c4b3;
+  --sage: #879f91;
 
-  --gold: #c9a96e;
-  --gold-light: #ead8ad;
+  --gold: #b89455;
+  --gold-light: #d8c28f;
 
-  --plum: #684153;
-  --plum-deep: #4f3040;
+  --plum: #482b3a;
+  --plum-deep: #321d29;
 
-  --ink: #3d3036;
-  --muted: #887a82;
+  --ink: #352a2f;
+  --muted: #76666d;
 
   --white: #ffffff;
 
@@ -77,6 +77,7 @@ textarea {
 
 .section {
   width: min(1180px, 90%);
+
   margin: auto;
 
   padding: 125px 0;
@@ -88,6 +89,7 @@ textarea {
   position: absolute;
 
   left: 0;
+
   top: 65px;
 
   font-family: var(--serif);
@@ -138,30 +140,29 @@ em {
   overflow: hidden;
 
   background:
-
     radial-gradient(
-      circle at 12% 18%,
-      rgba(233,168,183,.32),
-      transparent 27%
-    ),
-
-    radial-gradient(
-      circle at 88% 25%,
-      rgba(185,168,216,.32),
+      circle at 10% 15%,
+      rgba(201, 140, 159, 0.35),
       transparent 28%
     ),
 
     radial-gradient(
-      circle at 75% 85%,
-      rgba(169,196,179,.18),
-      transparent 25%
+      circle at 90% 20%,
+      rgba(142, 99, 120, 0.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(181, 160, 194, 0.28),
+      transparent 28%
     ),
 
     linear-gradient(
       135deg,
-      #fffaf7 0%,
-      #fff5f7 45%,
-      #f8f2fb 100%
+      #fbf5f0 0%,
+      #f6e9ec 48%,
+      #ede4f0 100%
     );
 }
 
@@ -175,7 +176,7 @@ em {
 
   inset: 27px;
 
-  border: 1px solid rgba(201,169,110,.38);
+  border: 1px solid rgba(184, 148, 85, 0.42);
 
   pointer-events: none;
 }
@@ -187,17 +188,19 @@ em {
   position: absolute;
 
   width: 100px;
+
   height: 100px;
 
   border-color: var(--gold);
 
   border-style: solid;
 
-  opacity: .65;
+  opacity: 0.7;
 }
 
 .hero-frame::before {
   left: -1px;
+
   top: -1px;
 
   border-width: 2px 0 0 2px;
@@ -205,6 +208,7 @@ em {
 
 .hero-frame::after {
   right: -1px;
+
   bottom: -1px;
 
   border-width: 0 2px 2px 0;
@@ -264,7 +268,7 @@ em {
 .hero-name {
   margin: 0;
 
-  line-height: .9;
+  line-height: 0.9;
 }
 
 
@@ -282,7 +286,7 @@ em {
   color: var(--plum);
 
   text-shadow:
-    0 12px 30px rgba(104,65,83,.12);
+    0 12px 30px rgba(72, 43, 58, 0.16);
 }
 
 .sankurathri {
@@ -301,7 +305,7 @@ em {
 
 
 /* =========================================================
-   DIVIDER
+   NAME DIVIDER
 ========================================================= */
 
 .name-divider {
@@ -375,7 +379,7 @@ em {
 
 
 /* =========================================================
-   DATE + TIME
+   DATE / TIME
 ========================================================= */
 
 .hero-date {
@@ -488,11 +492,11 @@ em {
 
   color: var(--plum);
 
-  border-bottom: 1px solid rgba(201,169,110,.4);
+  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
 
   padding-bottom: 2px;
 
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .venue-name:hover {
@@ -535,9 +539,9 @@ em {
 
   letter-spacing: 2px;
 
-  border-bottom: 1px solid rgba(201,169,110,.4);
+  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
 
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
 .maps-button b {
@@ -545,7 +549,7 @@ em {
 
   font-weight: 300;
 
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
 .maps-button:hover {
@@ -584,13 +588,13 @@ em {
 
   color: var(--plum);
 
-  background: rgba(255,255,255,.38);
+  background: rgba(255, 255, 255, 0.42);
 
   font-size: 10px;
 
   letter-spacing: 3px;
 
-  transition: .35s ease;
+  transition: 0.35s ease;
 }
 
 .hero-button b {
@@ -598,7 +602,7 @@ em {
 
   font-weight: 300;
 
-  transition: .35s ease;
+  transition: 0.35s ease;
 }
 
 .hero-button:hover {
@@ -609,7 +613,7 @@ em {
   color: white;
 
   box-shadow:
-    0 10px 30px rgba(104,65,83,.18);
+    0 10px 30px rgba(72, 43, 58, 0.2);
 }
 
 .hero-button:hover b {
@@ -618,7 +622,7 @@ em {
 
 
 /* =========================================================
-   SCROLL
+   SCROLL INDICATOR
 ========================================================= */
 
 .scroll-indicator {
@@ -663,7 +667,7 @@ em {
 
   pointer-events: none;
 
-  opacity: .45;
+  opacity: 0.48;
 }
 
 .butterfly-a {
@@ -685,7 +689,7 @@ em {
 
   font-size: 48px;
 
-  opacity: .24;
+  opacity: 0.3;
 
   filter: saturate(1.15);
 
@@ -699,25 +703,24 @@ em {
 
   font-size: 40px;
 
-  opacity: .18;
+  opacity: 0.22;
 
   animation: drift 9s ease-in-out infinite reverse;
 }
 
 @keyframes drift {
-
-  0%,100% {
+  0%,
+  100% {
     transform:
-      translate3d(0,0,0)
+      translate3d(0, 0, 0)
       rotate(-5deg);
   }
 
   50% {
     transform:
-      translate3d(15px,-25px,0)
+      translate3d(15px, -25px, 0)
       rotate(5deg);
   }
-
 }
 
 
@@ -728,7 +731,7 @@ em {
 .countdown-section {
   padding: 120px 20px 125px;
 
-  color: var(--plum);
+  color: var(--ivory);
 
   text-align: center;
 
@@ -737,28 +740,28 @@ em {
   overflow: hidden;
 
   background:
-
     radial-gradient(
-      circle at 10% 20%,
-      rgba(233,168,183,.32),
-      transparent 30%
+      circle at 15% 20%,
+      rgba(166, 95, 120, 0.35),
+      transparent 32%
     ),
 
     radial-gradient(
-      circle at 90% 80%,
-      rgba(185,168,216,.36),
+      circle at 85% 80%,
+      rgba(115, 91, 130, 0.35),
       transparent 32%
     ),
 
     linear-gradient(
       135deg,
-      #fdf0f3,
-      #f5effa
+      #482b3a,
+      #5b3547 48%,
+      #3b293d 100%
     );
 
-  border-top: 1px solid rgba(201,169,110,.2);
+  border-top: 1px solid rgba(184, 148, 85, 0.35);
 
-  border-bottom: 1px solid rgba(201,169,110,.2);
+  border-bottom: 1px solid rgba(184, 148, 85, 0.35);
 }
 
 .countdown-section::before {
@@ -770,7 +773,7 @@ em {
 
   height: 550px;
 
-  border: 1px solid rgba(201,169,110,.20);
+  border: 1px solid rgba(216, 194, 143, 0.15);
 
   border-radius: 50%;
 
@@ -788,7 +791,7 @@ em {
 
   height: 500px;
 
-  border: 1px solid rgba(201,169,110,.20);
+  border: 1px solid rgba(216, 194, 143, 0.15);
 
   border-radius: 50%;
 
@@ -812,7 +815,7 @@ em {
 }
 
 .countdown-section .eyebrow {
-  color: var(--blush-deep);
+  color: var(--gold-light);
 }
 
 .countdown-section h2 {
@@ -824,13 +827,13 @@ em {
 
   font-weight: 400;
 
-  line-height: .95;
+  line-height: 0.95;
 
-  color: var(--plum);
+  color: var(--ivory);
 }
 
 .countdown-section h2 em {
-  color: var(--lilac-deep);
+  color: var(--gold-light);
 }
 
 .countdown {
@@ -858,7 +861,7 @@ em {
 
   line-height: 1;
 
-  color: var(--plum);
+  color: var(--ivory);
 }
 
 .count-item span {
@@ -866,7 +869,7 @@ em {
 
   letter-spacing: 3px;
 
-  color: var(--muted);
+  color: #d8c2c8;
 }
 
 .count-separator {
@@ -901,7 +904,7 @@ em {
 
   height: 1px;
 
-  background: rgba(201,169,110,.45);
+  background: rgba(184, 148, 85, 0.45);
 }
 
 .memory-divider b {
@@ -937,7 +940,7 @@ em {
 
   font-weight: 400;
 
-  line-height: .95;
+  line-height: 0.95;
 
   color: var(--plum);
 }
@@ -960,7 +963,7 @@ em {
 
 
 /* =========================================================
-   RSVP SECTION
+   RSVP
 ========================================================= */
 
 .rsvp {
@@ -969,10 +972,9 @@ em {
   padding-bottom: 130px;
 
   background:
-
     radial-gradient(
       circle at 90% 10%,
-      rgba(185,168,216,.18),
+      rgba(181, 160, 194, 0.2),
       transparent 28%
     ),
 
@@ -982,7 +984,7 @@ em {
 .rsvp-layout {
   display: grid;
 
-  grid-template-columns: .8fr 1.2fr;
+  grid-template-columns: 0.8fr 1.2fr;
 
   gap: 100px;
 
@@ -1000,7 +1002,7 @@ em {
 
   font-weight: 400;
 
-  line-height: .82;
+  line-height: 0.82;
 
   color: var(--plum);
 }
@@ -1032,17 +1034,16 @@ em {
   padding: 55px;
 
   background:
-
     linear-gradient(
       145deg,
       #ffffff,
-      #fff8fa
+      #fff7f8
     );
 
   box-shadow:
-    0 30px 80px rgba(104,65,83,.12);
+    0 30px 80px rgba(72, 43, 58, 0.14);
 
-  border: 1px solid rgba(201,169,110,.25);
+  border: 1px solid rgba(184, 148, 85, 0.28);
 
   position: relative;
 }
@@ -1054,7 +1055,7 @@ em {
 
   inset: 12px;
 
-  border: 1px solid rgba(201,169,110,.16);
+  border: 1px solid rgba(184, 148, 85, 0.17);
 
   pointer-events: none;
 }
@@ -1165,7 +1166,7 @@ textarea {
 
   color: var(--muted);
 
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .choice small {
@@ -1180,7 +1181,6 @@ textarea {
 
 .choice input:checked + span {
   background:
-
     linear-gradient(
       135deg,
       var(--plum),
@@ -1192,7 +1192,7 @@ textarea {
   color: white;
 
   box-shadow:
-    0 8px 22px rgba(104,65,83,.18);
+    0 8px 22px rgba(72, 43, 58, 0.2);
 }
 
 
@@ -1223,7 +1223,6 @@ textarea {
   border: 0;
 
   background:
-
     linear-gradient(
       135deg,
       var(--plum),
@@ -1244,10 +1243,10 @@ textarea {
 
   font-size: 10px;
 
-  transition: .3s;
+  transition: 0.3s;
 
   box-shadow:
-    0 10px 25px rgba(104,65,83,.18);
+    0 10px 25px rgba(72, 43, 58, 0.22);
 }
 
 .submit-button b {
@@ -1255,12 +1254,11 @@ textarea {
 
   font-weight: 300;
 
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .submit-button:hover {
   background:
-
     linear-gradient(
       135deg,
       var(--blush-deep),
@@ -1297,32 +1295,31 @@ textarea {
   text-align: center;
 
   background:
-
     radial-gradient(
       circle at 20% 20%,
-      rgba(233,168,183,.32),
+      rgba(201, 140, 159, 0.3),
       transparent 28%
     ),
 
     radial-gradient(
       circle at 80% 80%,
-      rgba(185,168,216,.34),
+      rgba(181, 160, 194, 0.35),
       transparent 28%
     ),
 
     linear-gradient(
       135deg,
-      #f8e9ed,
-      #eee7f7
+      #ead9df,
+      #ddd2e5
     );
 
-  border-top: 1px solid rgba(201,169,110,.2);
+  border-top: 1px solid rgba(184, 148, 85, 0.28);
 }
 
 .footer-art {
   font-size: 55px;
 
-  opacity: .55;
+  opacity: 0.55;
 
   margin-bottom: 30px;
 }
@@ -1412,10 +1409,6 @@ textarea {
 
   .name-divider span {
     width: 55px;
-  }
-
-  .hero-location a {
-    font-size: 16px;
   }
 
   .rsvp-layout {
@@ -1556,5 +1549,4 @@ textarea {
   .footer h2 {
     font-size: 47px;
   }
-
 }
