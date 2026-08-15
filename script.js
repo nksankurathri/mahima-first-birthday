@@ -1,179 +1,24 @@
-/* =========================================================
-   GOOGLE APPS SCRIPT WEB APP
-========================================================= */
-
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxriQkjiGf7D47MaPCBPzKeUuZ-zdFn1jW8w2UhvgcjxI1HUcEmpvGfA07VhWgWaXrYfg/exec";
 
 
-/* =========================================================
-   COUNTDOWN
-========================================================= */
+const form = document.getElementById("rsvpForm");
+const formMessage = document.getElementById("formMessage");
 
-const eventDate = new Date(
-  2026,
-  8,
-  6,
-  12,
-  30,
-  0
-);
+const guestCountSection =
+  document.getElementById("guestCountSection");
 
+const adultsInput =
+  document.getElementById("adults");
 
-function updateCountdown() {
-
-  const now = new Date();
-
-  const difference =
-    eventDate.getTime() -
-    now.getTime();
+const childrenInput =
+  document.getElementById("children");
 
 
-  if (difference <= 0) {
 
-    setCountdownValue("days", 0);
-    setCountdownValue("hours", 0);
-    setCountdownValue("minutes", 0);
-    setCountdownValue("seconds", 0);
-
-    return;
-
-  }
-
-
-  const days =
-    Math.floor(
-      difference /
-      (1000 * 60 * 60 * 24)
-    );
-
-
-  const hours =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60 * 60 * 24)
-      ) /
-      (1000 * 60 * 60)
-    );
-
-
-  const minutes =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60 * 60)
-      ) /
-      (1000 * 60)
-    );
-
-
-  const seconds =
-    Math.floor(
-      (
-        difference %
-        (1000 * 60)
-      ) /
-      1000
-    );
-
-
-  setCountdownValue(
-    "days",
-    days
-  );
-
-  setCountdownValue(
-    "hours",
-    hours
-  );
-
-  setCountdownValue(
-    "minutes",
-    minutes
-  );
-
-  setCountdownValue(
-    "seconds",
-    seconds
-  );
-
-}
-
-
-function setCountdownValue(
-  id,
-  value
-) {
-
-  const element =
-    document.getElementById(id);
-
-  if (!element) {
-    return;
-  }
-
-  element.textContent =
-    String(value).padStart(
-      2,
-      "0"
-    );
-
-}
-
-
-updateCountdown();
-
-
-setInterval(
-  updateCountdown,
-  1000
-);
-
-
-/* =========================================================
-   RSVP ELEMENTS
-========================================================= */
-
-const rsvpForm =
-  document.getElementById(
-    "rsvpForm"
-  );
-
-
-const guestNumbers =
-  document.getElementById(
-    "guestNumbers"
-  );
-
-
-const submitButton =
-  document.getElementById(
-    "submitButton"
-  );
-
-
-const formMessage =
-  document.getElementById(
-    "formMessage"
-  );
-
-
-const adultsSelect =
-  document.getElementById(
-    "adults"
-  );
-
-
-const childrenSelect =
-  document.getElementById(
-    "children"
-  );
-
-
-/* =========================================================
+/* =====================================================
    RSVP YES / NO
-========================================================= */
+===================================================== */
 
 const rsvpOptions =
   document.querySelectorAll(
@@ -181,298 +26,192 @@ const rsvpOptions =
   );
 
 
-rsvpOptions.forEach(
-  option => {
+rsvpOptions.forEach(option => {
 
-    option.addEventListener(
-      "change",
-      function () {
+  option.addEventListener("change", function () {
 
+    if (this.value === "yes") {
 
-        if (
-          this.value === "Yes"
-        ) {
+      // Show guest count
+      guestCountSection.style.display = "grid";
 
-          /*
-             YES selected:
-             default adults = 1
-          */
-
-          guestNumbers.style.display =
-            "grid";
-
-
-          adultsSelect.value =
-            "1";
-
-
-          childrenSelect.value =
-            "0";
-
-
-        } else {
-
-
-          /*
-             NO selected
-          */
-
-          guestNumbers.style.display =
-            "none";
-
-
-          adultsSelect.value =
-            "0";
-
-
-          childrenSelect.value =
-            "0";
-
-        }
-
+      // Default adults to 1
+      if (
+        !adultsInput.value ||
+        Number(adultsInput.value) < 1
+      ) {
+        adultsInput.value = 1;
       }
-    );
-
-  }
-);
-
-
-/* =========================================================
-   RSVP SUBMISSION
-========================================================= */
-
-rsvpForm.addEventListener(
-  "submit",
-  async function (event) {
-
-    event.preventDefault();
-
-
-    /* ---------------------------------------
-       Values
-    --------------------------------------- */
-
-    const guestName =
-      document
-        .getElementById("guestName")
-        .value
-        .trim();
-
-
-    const rsvp =
-      document.querySelector(
-        'input[name="rsvp"]:checked'
-      )?.value;
-
-
-    const adults =
-      document
-        .getElementById("adults")
-        .value;
-
-
-    const children =
-      document
-        .getElementById("children")
-        .value;
-
-
-    const phone =
-      document
-        .getElementById("phone")
-        .value
-        .trim();
-
-
-    const message =
-      document
-        .getElementById("message")
-        .value
-        .trim();
-
-
-    /* ---------------------------------------
-       Validation
-    --------------------------------------- */
-
-    if (
-      !guestName ||
-      !rsvp
-    ) {
-
-      formMessage.textContent =
-        "Please complete the required fields.";
-
-      return;
 
     }
 
+    else if (this.value === "no") {
 
-    /* ---------------------------------------
-       Disable button
-    --------------------------------------- */
+      // Hide guest count
+      guestCountSection.style.display = "none";
 
-    submitButton.disabled =
-      true;
+      // Reset guest counts
+      adultsInput.value = 0;
+      childrenInput.value = 0;
 
+    }
 
-    submitButton.innerHTML =
-      `
-        <span>SENDING...</span>
-        <b>...</b>
-      `;
+  });
 
-
-    formMessage.textContent =
-      "";
+});
 
 
-    /* ---------------------------------------
-       Data
-    --------------------------------------- */
 
-    const data = {
+/* =====================================================
+   INITIAL STATE
+===================================================== */
 
-      guestName:
-        guestName,
-
-      rsvp:
-        rsvp,
-
-      adults:
-        rsvp === "Yes"
-          ? Number(adults)
-          : 0,
-
-      children:
-        rsvp === "Yes"
-          ? Number(children)
-          : 0,
-
-      phone:
-        phone,
-
-      message:
-        message
-
-    };
+guestCountSection.style.display = "none";
 
 
-    /* ---------------------------------------
-       Google Apps Script
-    --------------------------------------- */
 
-    try {
+/* =====================================================
+   SUBMIT RSVP
+===================================================== */
+
+form.addEventListener("submit", async function (event) {
+
+  event.preventDefault();
 
 
+  const guestName =
+    document.getElementById("guestName").value.trim();
+
+
+  const rsvp =
+    document.querySelector(
+      'input[name="rsvp"]:checked'
+    )?.value;
+
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+
+  const message =
+    document.getElementById("message").value.trim();
+
+
+  let adults = 0;
+
+  let children = 0;
+
+
+  /*
+    Only collect guest counts
+    when RSVP is YES.
+  */
+
+  if (rsvp === "yes") {
+
+    adults =
+      Number(adultsInput.value) || 1;
+
+    children =
+      Number(childrenInput.value) || 0;
+
+  }
+
+
+  const data = {
+
+    guestName: guestName,
+
+    rsvp: rsvp,
+
+    adults: adults,
+
+    children: children,
+
+    phone: phone,
+
+    message: message
+
+  };
+
+
+  /* Disable button */
+
+  const submitButton =
+    form.querySelector(
+      ".submit-button"
+    );
+
+
+  submitButton.disabled = true;
+
+  submitButton.style.opacity = "0.6";
+
+
+  formMessage.textContent =
+    "Sending your RSVP...";
+
+
+  try {
+
+    const response =
       await fetch(
         GOOGLE_SCRIPT_URL,
         {
+          method: "POST",
 
-          method:
-            "POST",
-
-          mode:
-            "no-cors",
+          mode: "no-cors",
 
           headers: {
-
             "Content-Type":
               "text/plain;charset=utf-8"
-
           },
 
           body:
             JSON.stringify(data)
-
         }
       );
 
 
-      /* ---------------------------------------
-         Success
-      --------------------------------------- */
+    /*
+      With no-cors we cannot read the
+      response, but the request is sent
+      successfully to Google Apps Script.
+    */
 
-      formMessage.textContent =
-        "Thank you! Your RSVP has been received. ♥";
-
-
-      formMessage.style.color =
-        "#754957";
+    formMessage.textContent =
+      "Thank you! Your RSVP has been received. 💕";
 
 
-      rsvpForm.reset();
+    form.reset();
 
 
-      /*
-         Restore defaults
-      */
+    // Reset guest counts
+    adultsInput.value = 1;
 
-      adultsSelect.value =
-        "1";
+    childrenInput.value = 0;
 
 
-      childrenSelect.value =
-        "0";
+    // Hide guest count again
+    guestCountSection.style.display =
+      "none";
 
-
-      guestNumbers.style.display =
-        "grid";
-
-
-      submitButton.disabled =
-        false;
-
-
-      submitButton.innerHTML =
-        `
-          <span>RSVP RECEIVED</span>
-          <b>✓</b>
-        `;
-
-
-      setTimeout(
-        () => {
-
-          submitButton.innerHTML =
-            `
-              <span>SEND RSVP</span>
-              <b>→</b>
-            `;
-
-        },
-        3500
-      );
-
-
-    } catch (error) {
-
-
-      console.error(
-        "RSVP Error:",
-        error
-      );
-
-
-      formMessage.textContent =
-        "Something went wrong. Please try again.";
-
-
-      formMessage.style.color =
-        "#a34e5d";
-
-
-      submitButton.disabled =
-        false;
-
-
-      submitButton.innerHTML =
-        `
-          <span>SEND RSVP</span>
-          <b>→</b>
-        `;
-
-    }
 
   }
-);
+
+  catch (error) {
+
+    console.error(error);
+
+
+    formMessage.textContent =
+      "Something went wrong. Please try again.";
+
+  }
+
+
+  submitButton.disabled = false;
+
+  submitButton.style.opacity = "1";
+
+});
