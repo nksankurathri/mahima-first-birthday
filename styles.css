@@ -1,1552 +1,885 @@
-:root {
-  --ivory: #fbf5f0;
-  --ivory-deep: #f4e8e8;
+<!DOCTYPE html>
+<html lang="en">
 
-  --blush: #c98c9f;
-  --blush-light: #e6c1cc;
-  --blush-deep: #a65f78;
+<head>
 
-  --lilac: #b5a0c2;
-  --lilac-light: #d8cbe0;
-  --lilac-deep: #735b82;
+  <meta charset="UTF-8">
 
-  --sage: #879f91;
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  --gold: #b89455;
-  --gold-light: #d8c28f;
+  <title>Mahima Sankurathri | First Birthday</title>
 
-  --plum: #482b3a;
-  --plum-deep: #321d29;
+  <meta
+    name="description"
+    content="You are invited to celebrate Mahima Sankurathri's first birthday."
+  >
 
-  --ink: #352a2f;
-  --muted: #76666d;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  --white: #ffffff;
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-  --serif: "Cormorant Garamond", serif;
-  --display: "Italiana", serif;
-  --script: "Parisienne", cursive;
-  --sans: "DM Sans", sans-serif;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Italiana&family=Parisienne&display=swap"
+    rel="stylesheet"
+  >
 
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
 
-/* =========================================================
-   RESET
-========================================================= */
+</head>
 
-* {
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-}
+<body>
 
-body {
-  margin: 0;
 
-  background: var(--ivory);
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-  color: var(--ink);
+<section class="hero">
 
-  font-family: var(--sans);
+  <div class="hero-frame"></div>
 
-  font-weight: 300;
 
-  line-height: 1.6;
+  <div class="butterfly butterfly-a">
+    🦋
+  </div>
 
-  overflow-x: hidden;
-}
+  <div class="butterfly butterfly-b">
+    🦋
+  </div>
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  <div class="butterfly butterfly-c">
+    🦋
+  </div>
 
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
 
+  <div class="hero-content">
 
-/* =========================================================
-   GLOBAL
-========================================================= */
 
-.section {
-  width: min(1180px, 90%);
+    <div class="top-label">
 
-  margin: auto;
+      <span></span>
 
-  padding: 125px 0;
+      YOU ARE INVITED
 
-  position: relative;
-}
+      <span></span>
 
-.section-number {
-  position: absolute;
+    </div>
 
-  left: 0;
 
-  top: 65px;
+    <p class="hero-small">
+      A BEAUTIFUL DAY TO CELEBRATE
+    </p>
 
-  font-family: var(--serif);
 
-  font-size: 13px;
+    <h1 class="hero-name">
 
-  color: var(--gold);
+      <span class="mahima">
+        Mahima
+      </span>
 
-  letter-spacing: 2px;
-}
+      <span class="sankurathri">
+        SANKURATHRI
+      </span>
 
-.eyebrow {
-  margin: 0 0 18px;
+    </h1>
 
-  font-size: 10px;
 
-  letter-spacing: 4px;
+    <div class="name-divider">
 
-  color: var(--blush-deep);
+      <span></span>
 
-  font-weight: 500;
-}
+      <b>✦</b>
 
-em {
-  font-family: var(--script);
+      <span></span>
 
-  font-weight: 400;
+    </div>
 
-  color: var(--blush-deep);
-}
 
+    <p class="turning">
 
-/* =========================================================
-   HERO
-========================================================= */
+      IS TURNING
 
-.hero {
-  min-height: 100vh;
+      <strong>
+        ONE
+      </strong>
 
-  position: relative;
+    </p>
 
-  display: flex;
 
-  align-items: center;
+    <!-- DATE / TIME -->
 
-  justify-content: center;
+    <div class="hero-date">
 
-  overflow: hidden;
 
-  background:
-    radial-gradient(
-      circle at 10% 15%,
-      rgba(201, 140, 159, 0.35),
-      transparent 28%
-    ),
+      <div class="date-block">
 
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(142, 99, 120, 0.22),
-      transparent 30%
-    ),
+        <small>
+          DATE
+        </small>
 
-    radial-gradient(
-      circle at 80% 90%,
-      rgba(181, 160, 194, 0.28),
-      transparent 28%
-    ),
+        <strong>
+          SEPTEMBER 6, 2026
+        </strong>
 
-    linear-gradient(
-      135deg,
-      #fbf5f0 0%,
-      #f6e9ec 48%,
-      #ede4f0 100%
-    );
-}
+        <small>
+          SUNDAY
+        </small>
 
+      </div>
 
-/* =========================================================
-   HERO FRAME
-========================================================= */
 
-.hero-frame {
-  position: absolute;
+      <div class="date-line"></div>
 
-  inset: 27px;
 
-  border: 1px solid rgba(184, 148, 85, 0.42);
+      <div class="date-block time-block">
 
-  pointer-events: none;
-}
+        <small>
+          TIME
+        </small>
 
-.hero-frame::before,
-.hero-frame::after {
-  content: "";
+        <strong>
+          12:30 PM
+        </strong>
 
-  position: absolute;
+      </div>
 
-  width: 100px;
 
-  height: 100px;
+    </div>
 
-  border-color: var(--gold);
 
-  border-style: solid;
+    <!-- LOCATION -->
 
-  opacity: 0.7;
-}
+    <div class="hero-location">
 
-.hero-frame::before {
-  left: -1px;
 
-  top: -1px;
+      <div class="location-pin">
+        ♡
+      </div>
 
-  border-width: 2px 0 0 2px;
-}
 
-.hero-frame::after {
-  right: -1px;
+      <div class="location-details">
 
-  bottom: -1px;
 
-  border-width: 0 2px 2px 0;
-}
+        <small>
+          CELEBRATION VENUE
+        </small>
 
 
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+        <a
+          class="venue-name"
+          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          William L. Patena Community Center
+        </a>
 
-.hero-content {
-  width: min(900px, 90%);
 
-  text-align: center;
+        <p class="address">
 
-  position: relative;
+          10675 E. Mary Katherine Dr.<br>
 
-  z-index: 2;
+          Mesa, AZ 85209
 
-  padding: 65px 0 55px;
-}
+        </p>
 
-.top-label {
-  display: flex;
 
-  justify-content: center;
+        <a
+          class="maps-button"
+          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-  align-items: center;
+          <span>
+            VIEW ON GOOGLE MAPS
+          </span>
 
-  gap: 14px;
+          <b>
+            ↗
+          </b>
 
-  font-size: 10px;
+        </a>
 
-  letter-spacing: 4px;
 
-  color: var(--plum);
-}
+      </div>
 
-.top-label span {
-  width: 38px;
+    </div>
 
-  height: 1px;
 
-  background: var(--gold);
-}
+    <!-- RSVP BUTTON -->
 
-.hero-small {
-  margin: 28px 0 5px;
+    <div class="hero-rsvp-wrapper">
 
-  font-size: 9px;
+      <a
+        href="#rsvp"
+        class="hero-button"
+      >
 
-  letter-spacing: 4px;
+        RSVP
 
-  color: var(--muted);
-}
+        <b>
+          →
+        </b>
 
-.hero-name {
-  margin: 0;
+      </a>
 
-  line-height: 0.9;
-}
+    </div>
 
 
-/* =========================================================
-   MAHIMA NAME
-========================================================= */
+  </div>
 
-.mahima {
-  display: block;
 
-  font-family: var(--script);
+  <div class="scroll-indicator">
 
-  font-size: clamp(85px, 14vw, 170px);
+    <span></span>
 
-  color: var(--plum);
+    SCROLL TO EXPLORE
 
-  text-shadow:
-    0 12px 30px rgba(72, 43, 58, 0.16);
-}
+    <span></span>
 
-.sankurathri {
-  display: block;
+  </div>
 
-  margin-top: 16px;
 
-  font-family: var(--display);
+</section>
 
-  font-size: clamp(26px, 5vw, 52px);
 
-  letter-spacing: 13px;
 
-  color: var(--plum-deep);
-}
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
 
+<section class="countdown-section">
 
-/* =========================================================
-   NAME DIVIDER
-========================================================= */
 
-.name-divider {
-  display: flex;
+  <div class="countdown-inner">
 
-  align-items: center;
 
-  justify-content: center;
+    <div class="countdown-top">
 
-  gap: 18px;
+      <p class="eyebrow">
+        ONE LITTLE YEAR
+      </p>
 
-  margin: 30px 0 18px;
-}
 
-.name-divider span {
-  width: 90px;
+      <h2>
 
-  height: 1px;
+        One little year,
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold)
-  );
-}
+        <em>
+          beautiful memories.
+        </em>
 
-.name-divider span:last-child {
-  background: linear-gradient(
-    90deg,
-    var(--gold),
-    transparent
-  );
-}
+      </h2>
 
-.name-divider b {
-  color: var(--gold);
+    </div>
 
-  font-size: 14px;
 
-  font-weight: 400;
-}
+    <div class="countdown">
 
 
-/* =========================================================
-   TURNING ONE
-========================================================= */
+      <div class="count-item">
 
-.turning {
-  margin: 0;
+        <strong id="days">
+          00
+        </strong>
 
-  font-family: var(--display);
+        <span>
+          DAYS
+        </span>
 
-  font-size: 19px;
+      </div>
 
-  letter-spacing: 6px;
 
-  color: var(--plum);
-}
+      <div class="count-separator">
+        :
+      </div>
 
-.turning strong {
-  display: block;
 
-  font-family: var(--serif);
+      <div class="count-item">
 
-  font-size: 42px;
+        <strong id="hours">
+          00
+        </strong>
 
-  letter-spacing: 9px;
+        <span>
+          HOURS
+        </span>
 
-  color: var(--blush-deep);
-}
+      </div>
 
 
-/* =========================================================
-   DATE / TIME
-========================================================= */
+      <div class="count-separator">
+        :
+      </div>
 
-.hero-date {
-  display: flex;
 
-  justify-content: center;
+      <div class="count-item">
 
-  align-items: center;
+        <strong id="minutes">
+          00
+        </strong>
 
-  gap: 30px;
+        <span>
+          MINUTES
+        </span>
 
-  margin: 30px 0 22px;
-}
+      </div>
 
-.date-block {
-  display: flex;
 
-  flex-direction: column;
+      <div class="count-separator">
+        :
+      </div>
 
-  gap: 3px;
-}
 
-.date-block small {
-  font-size: 8px;
+      <div class="count-item">
 
-  letter-spacing: 3px;
+        <strong id="seconds">
+          00
+        </strong>
 
-  color: var(--muted);
-}
+        <span>
+          SECONDS
+        </span>
 
-.date-block strong {
-  font-family: var(--serif);
+      </div>
 
-  font-size: 24px;
 
-  font-weight: 500;
+    </div>
 
-  letter-spacing: 1px;
 
-  color: var(--plum);
-}
+    <div class="memory-divider">
 
-.time-block strong {
-  font-size: 30px;
+      <span></span>
 
-  color: var(--blush-deep);
+      <b>
+        🦋
+      </b>
 
-  white-space: nowrap;
-}
+      <span></span>
 
-.date-line {
-  height: 45px;
+    </div>
 
-  width: 1px;
 
-  background: var(--gold-light);
-}
+    <div class="memory-section">
 
 
-/* =========================================================
-   LOCATION
-========================================================= */
+      <p class="memory-label">
+        A YEAR OF LOVE
+      </p>
 
-.hero-location {
-  display: flex;
 
-  justify-content: center;
+      <h3>
 
-  align-items: flex-start;
+        From tiny moments
 
-  gap: 10px;
+        <em>
+          to beautiful memories.
+        </em>
 
-  margin: 15px auto 24px;
+      </h3>
 
-  max-width: 500px;
-}
 
-.location-pin {
-  font-size: 19px;
+      <p class="memory-text">
 
-  color: var(--gold);
+        One little year filled with smiles,
+        cuddles, laughter and countless
+        beautiful moments.
 
-  margin-top: 1px;
-}
+        Now it's time to celebrate our
+        little butterfly's first wonderful year.
 
-.location-details {
-  display: flex;
+      </p>
 
-  flex-direction: column;
 
-  align-items: flex-start;
+    </div>
 
-  text-align: left;
-}
 
-.location-details > small {
-  font-size: 7px;
+  </div>
 
-  letter-spacing: 3px;
 
-  color: var(--muted);
+</section>
 
-  margin-bottom: 3px;
-}
 
-.venue-name {
-  font-family: var(--serif);
 
-  font-size: 18px;
+<!-- =====================================================
+     RSVP
+===================================================== -->
 
-  color: var(--plum);
+<section
+  class="section rsvp"
+  id="rsvp"
+>
 
-  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
 
-  padding-bottom: 2px;
+  <div class="section-number">
+    03
+  </div>
 
-  transition: 0.25s;
-}
 
-.venue-name:hover {
-  color: var(--blush-deep);
+  <div class="rsvp-layout">
 
-  border-color: var(--blush);
-}
 
-.address {
-  margin: 5px 0 2px;
+    <!-- RSVP INTRO -->
 
-  font-family: var(--sans);
+    <div class="rsvp-intro">
 
-  font-size: 12px;
 
-  line-height: 1.5;
+      <p class="eyebrow">
+        WE'D LOVE TO HAVE YOU
+      </p>
 
-  color: var(--muted);
-}
 
+      <h2>
+        RSVP
+      </h2>
 
-/* =========================================================
-   GOOGLE MAPS
-========================================================= */
 
-.maps-button {
-  display: inline-flex;
+      <p>
 
-  align-items: center;
+        Your presence would make
+        Mahima's special day even
+        more beautiful.
 
-  gap: 9px;
+        Please let us know if
+        you'll be joining us.
 
-  margin-top: 8px;
+      </p>
 
-  padding: 4px 0;
 
-  color: var(--plum);
+      <div class="rsvp-flower">
+        ✦
+      </div>
 
-  font-size: 8px;
 
-  letter-spacing: 2px;
+    </div>
 
-  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
 
-  transition: 0.25s ease;
-}
 
-.maps-button b {
-  font-size: 14px;
+    <!-- RSVP FORM -->
 
-  font-weight: 300;
+    <div class="rsvp-card">
 
-  transition: 0.25s ease;
-}
 
-.maps-button:hover {
-  color: var(--blush-deep);
+      <form id="rsvpForm">
 
-  border-color: var(--blush);
-}
 
-.maps-button:hover b {
-  transform: translate(3px, -3px);
-}
+        <!-- NAME -->
 
+        <div class="field">
 
-/* =========================================================
-   RSVP BUTTON
-========================================================= */
 
-.hero-rsvp-wrapper {
-  margin-top: 22px;
+          <label>
+            GUEST NAME
+          </label>
 
-  display: flex;
 
-  justify-content: center;
-}
+          <input
+            type="text"
+            id="guestName"
+            name="guestName"
+            placeholder="Your name"
+            required
+          >
 
-.hero-button {
-  display: inline-flex;
 
-  align-items: center;
+        </div>
 
-  gap: 28px;
 
-  padding: 15px 28px;
 
-  border: 1px solid var(--blush-deep);
+        <!-- RSVP -->
 
-  color: var(--plum);
+        <div class="field">
 
-  background: rgba(255, 255, 255, 0.42);
 
-  font-size: 10px;
+          <label>
+            WILL YOU BE JOINING US?
+          </label>
 
-  letter-spacing: 3px;
 
-  transition: 0.35s ease;
-}
+          <div class="choice-grid">
 
-.hero-button b {
-  font-size: 18px;
 
-  font-weight: 300;
+            <label class="choice">
 
-  transition: 0.35s ease;
-}
 
-.hero-button:hover {
-  background: var(--plum);
+              <input
+                type="radio"
+                name="rsvp"
+                value="yes"
+                required
+              >
 
-  border-color: var(--plum);
 
-  color: white;
+              <span>
 
-  box-shadow:
-    0 10px 30px rgba(72, 43, 58, 0.2);
-}
+                YES, I'LL BE THERE
 
-.hero-button:hover b {
-  transform: translateX(5px);
-}
+                <small>
+                  Can't wait!
+                </small>
 
+              </span>
 
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
 
-.scroll-indicator {
-  position: absolute;
+            </label>
 
-  bottom: 28px;
 
-  left: 50%;
 
-  transform: translateX(-50%);
+            <label class="choice">
 
-  display: flex;
 
-  align-items: center;
+              <input
+                type="radio"
+                name="rsvp"
+                value="no"
+              >
 
-  gap: 10px;
 
-  font-size: 8px;
+              <span>
 
-  letter-spacing: 3px;
+                SORRY, CAN'T MAKE IT
 
-  color: var(--muted);
-}
+                <small>
+                  Sending our love
+                </small>
 
-.scroll-indicator span {
-  width: 25px;
+              </span>
 
-  height: 1px;
 
-  background: var(--gold);
-}
+            </label>
 
 
-/* =========================================================
-   BUTTERFLIES
-========================================================= */
+          </div>
 
-.butterfly {
-  position: absolute;
 
-  z-index: 3;
+        </div>
 
-  pointer-events: none;
 
-  opacity: 0.48;
-}
 
-.butterfly-a {
-  top: 17%;
+        <!-- GUEST COUNT -->
 
-  left: 8%;
+        <!-- IMPORTANT:
+             Hidden by default.
+             JavaScript adds .show when YES is selected.
+        -->
 
-  font-size: 22px;
+        <div
+          class="guest-grid"
+          id="guestCountSection"
+        >
 
-  color: var(--gold);
 
-  animation: drift 8s ease-in-out infinite;
-}
+          <div class="field">
 
-.butterfly-b {
-  right: 6%;
 
-  top: 20%;
+            <label>
+              ADULTS
+            </label>
 
-  font-size: 48px;
 
-  opacity: 0.3;
+            <input
+              type="number"
+              id="adults"
+              name="adults"
+              min="1"
+              value="1"
+            >
 
-  filter: saturate(1.15);
 
-  animation: drift 10s ease-in-out infinite;
-}
+          </div>
 
-.butterfly-c {
-  left: 8%;
 
-  bottom: 17%;
 
-  font-size: 40px;
+          <div class="field">
 
-  opacity: 0.22;
 
-  animation: drift 9s ease-in-out infinite reverse;
-}
+            <label>
+              CHILDREN
+            </label>
 
-@keyframes drift {
-  0%,
-  100% {
-    transform:
-      translate3d(0, 0, 0)
-      rotate(-5deg);
+
+            <input
+              type="number"
+              id="children"
+              name="children"
+              min="0"
+              value="0"
+            >
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- PHONE -->
+
+        <div class="field">
+
+
+          <label>
+
+            PHONE
+
+            <small>
+              OPTIONAL
+            </small>
+
+          </label>
+
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone number"
+          >
+
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="field">
+
+
+          <label>
+
+            MESSAGE
+
+            <small>
+              OPTIONAL
+            </small>
+
+          </label>
+
+
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            placeholder="Leave a little note for Mahima..."
+          ></textarea>
+
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+
+          <span>
+            SEND RSVP
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+        <div
+          class="form-message"
+          id="formMessage"
+        ></div>
+
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+
+  <div class="footer-art">
+    🦋
+  </div>
+
+
+  <p class="footer-label">
+    WITH LOVE,
+  </p>
+
+
+  <h2>
+    Sankurathri's Family
+  </h2>
+
+
+  <p>
+    We can't wait to celebrate with you.
+  </p>
+
+
+  <div class="footer-line">
+
+    <span></span>
+
+    ✦
+
+    <span></span>
+
+  </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<script>
+
+const birthdayDate =
+  new Date(
+    "September 6, 2026 12:30:00"
+  ).getTime();
+
+
+function updateCountdown() {
+
+
+  const now =
+    new Date().getTime();
+
+
+  const distance =
+    birthdayDate - now;
+
+
+  if (distance <= 0) {
+
+
+    document.getElementById("days")
+      .textContent = "00";
+
+
+    document.getElementById("hours")
+      .textContent = "00";
+
+
+    document.getElementById("minutes")
+      .textContent = "00";
+
+
+    document.getElementById("seconds")
+      .textContent = "00";
+
+
+    return;
+
   }
 
-  50% {
-    transform:
-      translate3d(15px, -25px, 0)
-      rotate(5deg);
-  }
-}
 
-
-/* =========================================================
-   COUNTDOWN
-========================================================= */
-
-.countdown-section {
-  padding: 120px 20px 125px;
-
-  color: var(--ivory);
-
-  text-align: center;
-
-  position: relative;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(166, 95, 120, 0.35),
-      transparent 32%
-    ),
-
-    radial-gradient(
-      circle at 85% 80%,
-      rgba(115, 91, 130, 0.35),
-      transparent 32%
-    ),
-
-    linear-gradient(
-      135deg,
-      #482b3a,
-      #5b3547 48%,
-      #3b293d 100%
-    );
-
-  border-top: 1px solid rgba(184, 148, 85, 0.35);
-
-  border-bottom: 1px solid rgba(184, 148, 85, 0.35);
-}
-
-.countdown-section::before {
-  content: "";
-
-  position: absolute;
-
-  width: 550px;
-
-  height: 550px;
-
-  border: 1px solid rgba(216, 194, 143, 0.15);
-
-  border-radius: 50%;
-
-  left: -280px;
-
-  top: -280px;
-}
-
-.countdown-section::after {
-  content: "";
-
-  position: absolute;
-
-  width: 500px;
-
-  height: 500px;
-
-  border: 1px solid rgba(216, 194, 143, 0.15);
-
-  border-radius: 50%;
-
-  right: -250px;
-
-  bottom: -280px;
-}
-
-.countdown-inner {
-  position: relative;
-
-  z-index: 2;
-
-  width: min(950px, 90%);
-
-  margin: auto;
-}
-
-.countdown-top {
-  text-align: center;
-}
-
-.countdown-section .eyebrow {
-  color: var(--gold-light);
-}
-
-.countdown-section h2 {
-  margin: 0;
-
-  font-family: var(--display);
-
-  font-size: clamp(45px, 6vw, 70px);
-
-  font-weight: 400;
-
-  line-height: 0.95;
-
-  color: var(--ivory);
-}
-
-.countdown-section h2 em {
-  color: var(--gold-light);
-}
-
-.countdown {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  margin-top: 55px;
-}
-
-.count-item {
-  min-width: 120px;
-}
-
-.count-item strong {
-  display: block;
-
-  font-family: var(--serif);
-
-  font-size: 65px;
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  color: var(--ivory);
-}
-
-.count-item span {
-  font-size: 8px;
-
-  letter-spacing: 3px;
-
-  color: #d8c2c8;
-}
-
-.count-separator {
-  font-family: var(--serif);
-
-  font-size: 45px;
-
-  color: var(--gold);
-
-  padding-bottom: 20px;
-}
-
-
-/* =========================================================
-   MEMORY
-========================================================= */
-
-.memory-divider {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 18px;
-
-  margin: 70px 0 45px;
-}
-
-.memory-divider span {
-  width: 80px;
-
-  height: 1px;
-
-  background: rgba(184, 148, 85, 0.45);
-}
-
-.memory-divider b {
-  color: var(--gold);
-
-  font-size: 16px;
-
-  font-weight: 400;
-}
-
-.memory-section {
-  max-width: 650px;
-
-  margin: auto;
-}
-
-.memory-label {
-  font-size: 10px;
-
-  letter-spacing: 4px;
-
-  color: var(--blush-deep);
-
-  margin: 0 0 18px;
-}
-
-.memory-section h3 {
-  margin: 0;
-
-  font-family: var(--display);
-
-  font-size: clamp(48px, 7vw, 78px);
-
-  font-weight: 400;
-
-  line-height: 0.95;
-
-  color: var(--plum);
-}
-
-.memory-section h3 em {
-  color: var(--lilac-deep);
-}
-
-.memory-text {
-  max-width: 570px;
-
-  margin: 25px auto 0;
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   RSVP
-========================================================= */
-
-.rsvp {
-  padding-top: 120px;
-
-  padding-bottom: 130px;
-
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(181, 160, 194, 0.2),
-      transparent 28%
-    ),
-
-    var(--ivory);
-}
-
-.rsvp-layout {
-  display: grid;
-
-  grid-template-columns: 0.8fr 1.2fr;
-
-  gap: 100px;
-
-  align-items: start;
-
-  padding-left: 60px;
-}
-
-.rsvp-intro h2 {
-  margin: 0;
-
-  font-family: var(--display);
-
-  font-size: clamp(65px, 8vw, 105px);
-
-  font-weight: 400;
-
-  line-height: 0.82;
-
-  color: var(--plum);
-}
-
-.rsvp-intro > p:not(.eyebrow) {
-  max-width: 320px;
-
-  margin-top: 35px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-}
-
-.rsvp-flower {
-  margin-top: 40px;
-
-  color: var(--gold);
-
-  font-size: 30px;
-}
-
-
-/* =========================================================
-   RSVP CARD
-========================================================= */
-
-.rsvp-card {
-  padding: 55px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff,
-      #fff7f8
+  const days =
+    Math.floor(
+      distance /
+      (1000 * 60 * 60 * 24)
     );
 
-  box-shadow:
-    0 30px 80px rgba(72, 43, 58, 0.14);
 
-  border: 1px solid rgba(184, 148, 85, 0.28);
-
-  position: relative;
-}
-
-.rsvp-card::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 12px;
-
-  border: 1px solid rgba(184, 148, 85, 0.17);
-
-  pointer-events: none;
-}
-
-.rsvp-card form {
-  position: relative;
-
-  z-index: 1;
-}
-
-.field {
-  margin-bottom: 24px;
-}
-
-.field label {
-  display: block;
-
-  margin-bottom: 8px;
-
-  font-size: 9px;
-
-  letter-spacing: 2.5px;
-
-  color: var(--plum);
-
-  font-weight: 500;
-}
-
-.field label small {
-  color: var(--muted);
-
-  font-weight: 300;
-
-  letter-spacing: 1px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-
-  border: 0;
-
-  border-bottom: 1px solid #e5d7dc;
-
-  background: transparent;
-
-  padding: 12px 0;
-
-  outline: none;
-
-  color: var(--ink);
-
-  font-size: 14px;
-
-  border-radius: 0;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--blush);
-}
-
-textarea {
-  resize: vertical;
-}
-
-
-/* =========================================================
-   RSVP CHOICES
-========================================================= */
-
-.choice-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 10px;
-}
-
-.choice {
-  position: relative;
-
-  cursor: pointer;
-}
-
-.choice input {
-  position: absolute;
-
-  opacity: 0;
-}
-
-.choice span {
-  display: block;
-
-  padding: 17px;
-
-  border: 1px solid #ded2d8;
-
-  background: #fffafa;
-
-  text-align: center;
-
-  font-size: 11px;
-
-  letter-spacing: 2px;
-
-  color: var(--muted);
-
-  transition: 0.25s;
-}
-
-.choice small {
-  display: block;
-
-  margin-top: 4px;
-
-  font-size: 7px;
-
-  letter-spacing: 1px;
-}
-
-.choice input:checked + span {
-  background:
-    linear-gradient(
-      135deg,
-      var(--plum),
-      var(--lilac-deep)
+  const hours =
+    Math.floor(
+      (
+        distance %
+        (1000 * 60 * 60 * 24)
+      ) /
+      (1000 * 60 * 60)
     );
 
-  border-color: var(--plum);
 
-  color: white;
-
-  box-shadow:
-    0 8px 22px rgba(72, 43, 58, 0.2);
-}
-
-
-/* =========================================================
-   GUEST COUNT
-========================================================= */
-
-.guest-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 25px;
-}
-
-
-/* =========================================================
-   SUBMIT BUTTON
-========================================================= */
-
-.submit-button {
-  width: 100%;
-
-  margin-top: 10px;
-
-  padding: 18px 22px;
-
-  border: 0;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--plum),
-      var(--plum-deep)
+  const minutes =
+    Math.floor(
+      (
+        distance %
+        (1000 * 60 * 60)
+      ) /
+      (1000 * 60)
     );
 
-  color: white;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  cursor: pointer;
-
-  letter-spacing: 3px;
-
-  font-size: 10px;
-
-  transition: 0.3s;
-
-  box-shadow:
-    0 10px 25px rgba(72, 43, 58, 0.22);
-}
-
-.submit-button b {
-  font-size: 20px;
-
-  font-weight: 300;
-
-  transition: 0.3s;
-}
-
-.submit-button:hover {
-  background:
-    linear-gradient(
-      135deg,
-      var(--blush-deep),
-      var(--plum)
+  const seconds =
+    Math.floor(
+      (
+        distance %
+        (1000 * 60)
+      ) /
+      1000
     );
 
-  transform: translateY(-2px);
-}
 
-.submit-button:hover b {
-  transform: translateX(6px);
-}
-
-.form-message {
-  min-height: 20px;
-
-  margin-top: 15px;
-
-  text-align: center;
-
-  font-size: 12px;
-
-  color: var(--plum);
-}
+  document.getElementById("days")
+    .textContent =
+    String(days).padStart(2, "0");
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+  document.getElementById("hours")
+    .textContent =
+    String(hours).padStart(2, "0");
 
-.footer {
-  padding: 110px 20px 90px;
 
-  text-align: center;
+  document.getElementById("minutes")
+    .textContent =
+    String(minutes).padStart(2, "0");
 
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(201, 140, 159, 0.3),
-      transparent 28%
-    ),
 
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(181, 160, 194, 0.35),
-      transparent 28%
-    ),
+  document.getElementById("seconds")
+    .textContent =
+    String(seconds).padStart(2, "0");
 
-    linear-gradient(
-      135deg,
-      #ead9df,
-      #ddd2e5
-    );
-
-  border-top: 1px solid rgba(184, 148, 85, 0.28);
-}
-
-.footer-art {
-  font-size: 55px;
-
-  opacity: 0.55;
-
-  margin-bottom: 30px;
-}
-
-.footer-label {
-  margin: 0;
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  color: var(--plum);
-}
-
-.footer h2 {
-  margin: 8px 0;
-
-  font-family: var(--script);
-
-  font-size: clamp(45px, 7vw, 75px);
-
-  font-weight: 400;
-
-  color: var(--plum);
-}
-
-.footer > p:not(.footer-label) {
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 13px;
-}
-
-.footer-line {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 15px;
-
-  margin-top: 30px;
-
-  color: var(--gold);
-}
-
-.footer-line span {
-  width: 50px;
-
-  height: 1px;
-
-  background: var(--gold-light);
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+updateCountdown();
 
-@media (max-width: 800px) {
+setInterval(
+  updateCountdown,
+  1000
+);
 
-  .section {
-    width: 88%;
-
-    padding: 90px 0;
-  }
-
-  .section-number {
-    top: 35px;
-
-    left: 0;
-  }
-
-  .hero-frame {
-    inset: 15px;
-  }
-
-  .hero-content {
-    padding: 70px 10px 55px;
-  }
-
-  .sankurathri {
-    letter-spacing: 7px;
-  }
-
-  .name-divider span {
-    width: 55px;
-  }
-
-  .rsvp-layout {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    padding-left: 35px;
-  }
-
-  .countdown {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 35px 10px;
-  }
-
-  .count-separator {
-    display: none;
-  }
-
-  .count-item strong {
-    font-size: 52px;
-  }
-
-  .rsvp-card {
-    padding: 40px 25px;
-  }
-}
+</script>
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+<script src="script.js"></script>
 
-@media (max-width: 500px) {
 
-  .hero {
-    min-height: 100svh;
-  }
+</body>
 
-  .hero-content {
-    padding-top: 65px;
-  }
-
-  .hero-small {
-    font-size: 7px;
-
-    letter-spacing: 2px;
-  }
-
-  .mahima {
-    font-size: 82px;
-  }
-
-  .sankurathri {
-    font-size: 24px;
-
-    letter-spacing: 5px;
-  }
-
-  .turning {
-    font-size: 16px;
-
-    letter-spacing: 4px;
-  }
-
-  .turning strong {
-    font-size: 36px;
-  }
-
-  .hero-date {
-    gap: 15px;
-  }
-
-  .date-block strong {
-    font-size: 20px;
-  }
-
-  .time-block strong {
-    font-size: 25px;
-  }
-
-  .hero-location {
-    max-width: 320px;
-
-    margin-bottom: 20px;
-  }
-
-  .venue-name {
-    font-size: 15px;
-  }
-
-  .address {
-    font-size: 11px;
-  }
-
-  .maps-button {
-    margin-top: 7px;
-
-    margin-bottom: 0;
-  }
-
-  .hero-rsvp-wrapper {
-    margin-top: 22px;
-  }
-
-  .scroll-indicator {
-    display: none;
-  }
-
-  .countdown-section {
-    padding: 90px 20px;
-  }
-
-  .countdown-section h2 {
-    font-size: 47px;
-  }
-
-  .memory-divider {
-    margin: 55px 0 35px;
-  }
-
-  .memory-section h3 {
-    font-size: 55px;
-  }
-
-  .choice-grid,
-  .guest-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rsvp-intro h2 {
-    font-size: 75px;
-  }
-
-  .footer h2 {
-    font-size: 47px;
-  }
-}
+</html>
