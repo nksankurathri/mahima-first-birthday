@@ -1,101 +1,70 @@
-/* =====================================================
-   GOOGLE APPS SCRIPT
-===================================================== */
-
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxriQkjiGf7D47MaPCBPzKeUuZ-zdFn1jW8w2UhvgcjxI1HUcEmpvGfA07VhWgWaXrYfg/exec";
 
 
-/* =====================================================
-   RSVP ELEMENTS
-===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-const rsvpForm =
-  document.getElementById("rsvpForm");
+  /* =====================================================
+     ELEMENTS
+  ===================================================== */
 
-const guestCountSection =
-  document.getElementById("guestCountSection");
+  const form =
+    document.getElementById("rsvpForm");
 
-const adultsInput =
-  document.getElementById("adults");
+  const guestCountSection =
+    document.getElementById("guestCountSection");
 
-const childrenInput =
-  document.getElementById("children");
+  const adultsInput =
+    document.getElementById("adults");
 
-const formMessage =
-  document.getElementById("formMessage");
+  const childrenInput =
+    document.getElementById("children");
 
-const submitButton =
-  rsvpForm
-    ? rsvpForm.querySelector(".submit-button")
-    : null;
+  const formMessage =
+    document.getElementById("formMessage");
+
+  const submitButton =
+    form.querySelector(".submit-button");
+
+  const rsvpOptions =
+    document.querySelectorAll(
+      'input[name="rsvp"]'
+    );
 
 
-/* =====================================================
-   INITIAL STATE
-===================================================== */
+  /* =====================================================
+     INITIAL STATE
+  ===================================================== */
 
-if (guestCountSection) {
   guestCountSection.style.display = "none";
-}
+
+  adultsInput.value = "1";
+  childrenInput.value = "0";
 
 
-/* =====================================================
-   RSVP YES / NO
-===================================================== */
+  /* =====================================================
+     YES / NO
+  ===================================================== */
 
-const rsvpOptions =
-  document.querySelectorAll(
-    'input[name="rsvp"]'
-  );
+  rsvpOptions.forEach(function (radio) {
 
-
-rsvpOptions.forEach(function (option) {
-
-  option.addEventListener(
-    "change",
-    function () {
-
-      /* -----------------------------------------------
-         YES
-      ------------------------------------------------ */
+    radio.addEventListener("change", function () {
 
       if (this.value === "yes") {
 
-        guestCountSection.style.display =
-          "grid";
+        /* YES */
 
-
-        /*
-           Default adult count = 1
-        */
+        guestCountSection.style.display = "grid";
 
         adultsInput.value = "1";
 
-
-        /*
-           Default children = 0
-        */
-
         childrenInput.value = "0";
 
-      }
+      } else {
 
+        /* NO */
 
-      /* -----------------------------------------------
-         NO
-      ------------------------------------------------ */
-
-      else {
-
-        guestCountSection.style.display =
-          "none";
-
-
-        /*
-           Don't count guests when
-           they are not attending.
-        */
+        guestCountSection.style.display = "none";
 
         adultsInput.value = "0";
 
@@ -103,279 +72,208 @@ rsvpOptions.forEach(function (option) {
 
       }
 
-    }
-  );
+    });
 
-});
-
-
-/* =====================================================
-   RSVP FORM SUBMIT
-===================================================== */
-
-if (rsvpForm) {
-
-  rsvpForm.addEventListener(
-    "submit",
-    async function (event) {
-
-      event.preventDefault();
+  });
 
 
-      /* -----------------------------------------------
-         Get RSVP
-      ------------------------------------------------ */
+  /* =====================================================
+     FORM SUBMIT
+  ===================================================== */
 
-      const selectedRSVP =
-        document.querySelector(
-          'input[name="rsvp"]:checked'
-        );
+  form.addEventListener("submit", async function (event) {
 
-
-      if (!selectedRSVP) {
-
-        formMessage.textContent =
-          "Please select Yes or No.";
-
-        return;
-
-      }
+    event.preventDefault();
 
 
-      const rsvp =
-        selectedRSVP.value;
+    const guestName =
+      document
+        .getElementById("guestName")
+        .value
+        .trim();
 
 
-      /* -----------------------------------------------
-         Get guest name
-      ------------------------------------------------ */
-
-      const guestName =
-        document
-          .getElementById("guestName")
-          .value
-          .trim();
-
-
-      if (!guestName) {
-
-        formMessage.textContent =
-          "Please enter your name.";
-
-        return;
-
-      }
-
-
-      /* -----------------------------------------------
-         Guest count
-      ------------------------------------------------ */
-
-      let adults = 0;
-      let children = 0;
-
-
-      if (rsvp === "yes") {
-
-        adults =
-          Number(adultsInput.value) || 1;
-
-        children =
-          Number(childrenInput.value) || 0;
-
-      }
-
-
-      /* -----------------------------------------------
-         Phone
-      ------------------------------------------------ */
-
-      const phone =
-        document
-          .getElementById("phone")
-          .value
-          .trim();
-
-
-      /* -----------------------------------------------
-         Message
-      ------------------------------------------------ */
-
-      const message =
-        document
-          .getElementById("message")
-          .value
-          .trim();
-
-
-      /* -----------------------------------------------
-         Data for Google Sheets
-      ------------------------------------------------ */
-
-      const data = {
-
-        guestName: guestName,
-
-        rsvp: rsvp,
-
-        adults: adults,
-
-        children: children,
-
-        phone: phone,
-
-        message: message
-
-      };
-
-
-      console.log(
-        "Submitting RSVP:",
-        data
+    const selectedRSVP =
+      document.querySelector(
+        'input[name="rsvp"]:checked'
       );
 
 
-      /* -----------------------------------------------
-         Disable button
-      ------------------------------------------------ */
+    if (!guestName) {
 
-      if (submitButton) {
+      formMessage.textContent =
+        "Please enter your name.";
 
-        submitButton.disabled = true;
+      return;
 
-        submitButton.innerHTML =
-          `
-            <span>SENDING...</span>
-            <b>...</b>
-          `;
+    }
 
-      }
+
+    if (!selectedRSVP) {
+
+      formMessage.textContent =
+        "Please select Yes or No.";
+
+      return;
+
+    }
+
+
+    const rsvp =
+      selectedRSVP.value;
+
+
+    let adults = 0;
+    let children = 0;
+
+
+    if (rsvp === "yes") {
+
+      adults =
+        Number(adultsInput.value) || 1;
+
+      children =
+        Number(childrenInput.value) || 0;
+
+    }
+
+
+    const phone =
+      document
+        .getElementById("phone")
+        .value
+        .trim();
+
+
+    const message =
+      document
+        .getElementById("message")
+        .value
+        .trim();
+
+
+    const data = {
+
+      guestName: guestName,
+
+      rsvp: rsvp,
+
+      adults: adults,
+
+      children: children,
+
+      phone: phone,
+
+      message: message
+
+    };
+
+
+    console.log(
+      "RSVP DATA:",
+      data
+    );
+
+
+    /* =================================================
+       BUTTON
+    ================================================= */
+
+    submitButton.disabled = true;
+
+    submitButton.innerHTML = `
+      <span>SENDING...</span>
+      <b>...</b>
+    `;
+
+
+    formMessage.textContent =
+      "Sending your RSVP...";
+
+
+    /* =================================================
+       GOOGLE SHEETS
+    ================================================= */
+
+    try {
+
+      await fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:
+            JSON.stringify(data)
+        }
+      );
+
+
+      /* ===============================================
+         SUCCESS
+      =============================================== */
+
+      formMessage.textContent =
+        "Thank you! Your RSVP has been received. ♥";
+
+
+      form.reset();
+
+
+      adultsInput.value = "1";
+
+      childrenInput.value = "0";
+
+
+      guestCountSection.style.display =
+        "none";
+
+
+      submitButton.disabled = false;
+
+      submitButton.innerHTML = `
+        <span>RSVP RECEIVED</span>
+        <b>✓</b>
+      `;
+
+
+      setTimeout(function () {
+
+        submitButton.innerHTML = `
+          <span>SEND RSVP</span>
+          <b>→</b>
+        `;
+
+      }, 3000);
+
+
+    } catch (error) {
+
+      console.error(
+        "RSVP ERROR:",
+        error
+      );
 
 
       formMessage.textContent =
-        "Sending your RSVP...";
+        "Something went wrong. Please try again.";
 
 
-      /* -----------------------------------------------
-         Send to Google Sheets
-      ------------------------------------------------ */
+      submitButton.disabled = false;
 
-      try {
-
-        await fetch(
-          GOOGLE_SCRIPT_URL,
-          {
-            method: "POST",
-
-            mode: "no-cors",
-
-            headers: {
-              "Content-Type":
-                "text/plain;charset=utf-8"
-            },
-
-            body:
-              JSON.stringify(data)
-          }
-        );
-
-
-        /* ---------------------------------------------
-           Success
-        ---------------------------------------------- */
-
-        formMessage.textContent =
-          "Thank you! Your RSVP has been received. ♥";
-
-
-        /*
-           Reset form
-        */
-
-        rsvpForm.reset();
-
-
-        /*
-           Restore defaults
-        */
-
-        adultsInput.value = "1";
-
-        childrenInput.value = "0";
-
-
-        /*
-           Hide guest count
-        */
-
-        guestCountSection.style.display =
-          "none";
-
-
-        /* ---------------------------------------------
-           Restore button
-        ---------------------------------------------- */
-
-        if (submitButton) {
-
-          submitButton.disabled = false;
-
-          submitButton.innerHTML =
-            `
-              <span>RSVP RECEIVED</span>
-              <b>✓</b>
-            `;
-
-
-          setTimeout(
-            function () {
-
-              submitButton.innerHTML =
-                `
-                  <span>SEND RSVP</span>
-                  <b>→</b>
-                `;
-
-            },
-            3000
-          );
-
-        }
-
-      }
-
-
-      /* -----------------------------------------------
-         Error
-      ------------------------------------------------ */
-
-      catch (error) {
-
-        console.error(
-          "RSVP submission error:",
-          error
-        );
-
-
-        formMessage.textContent =
-          "Something went wrong. Please try again.";
-
-
-        if (submitButton) {
-
-          submitButton.disabled = false;
-
-          submitButton.innerHTML =
-            `
-              <span>SEND RSVP</span>
-              <b>→</b>
-            `;
-
-        }
-
-      }
+      submitButton.innerHTML = `
+        <span>SEND RSVP</span>
+        <b>→</b>
+      `;
 
     }
-  );
 
-}
+  });
+
+});
