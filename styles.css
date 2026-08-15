@@ -1,11 +1,1552 @@
+:root {
+  --ivory: #fbf5f0;
+  --ivory-deep: #f4e8e8;
+
+  --blush: #c98c9f;
+  --blush-light: #e6c1cc;
+  --blush-deep: #a65f78;
+
+  --lilac: #b5a0c2;
+  --lilac-light: #d8cbe0;
+  --lilac-deep: #735b82;
+
+  --sage: #879f91;
+
+  --gold: #b89455;
+  --gold-light: #d8c28f;
+
+  --plum: #482b3a;
+  --plum-deep: #321d29;
+
+  --ink: #352a2f;
+  --muted: #76666d;
+
+  --white: #ffffff;
+
+  --serif: "Cormorant Garamond", serif;
+  --display: "Italiana", serif;
+  --script: "Parisienne", cursive;
+  --sans: "DM Sans", sans-serif;
+}
+
+
 /* =========================================================
-   RSVP GUEST COUNT VISIBILITY
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--ivory);
+
+  color: var(--ink);
+
+  font-family: var(--sans);
+
+  font-weight: 300;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.section {
+  width: min(1180px, 90%);
+
+  margin: auto;
+
+  padding: 125px 0;
+
+  position: relative;
+}
+
+.section-number {
+  position: absolute;
+
+  left: 0;
+
+  top: 65px;
+
+  font-family: var(--serif);
+
+  font-size: 13px;
+
+  color: var(--gold);
+
+  letter-spacing: 2px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: var(--blush-deep);
+
+  font-weight: 500;
+}
+
+em {
+  font-family: var(--script);
+
+  font-weight: 400;
+
+  color: var(--blush-deep);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(201, 140, 159, 0.35),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(142, 99, 120, 0.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(181, 160, 194, 0.28),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fbf5f0 0%,
+      #f6e9ec 48%,
+      #ede4f0 100%
+    );
+}
+
+
+/* =========================================================
+   HERO FRAME
+========================================================= */
+
+.hero-frame {
+  position: absolute;
+
+  inset: 27px;
+
+  border: 1px solid rgba(184, 148, 85, 0.42);
+
+  pointer-events: none;
+}
+
+.hero-frame::before,
+.hero-frame::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+
+  height: 100px;
+
+  border-color: var(--gold);
+
+  border-style: solid;
+
+  opacity: 0.7;
+}
+
+.hero-frame::before {
+  left: -1px;
+
+  top: -1px;
+
+  border-width: 2px 0 0 2px;
+}
+
+.hero-frame::after {
+  right: -1px;
+
+  bottom: -1px;
+
+  border-width: 0 2px 2px 0;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  width: min(900px, 90%);
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 2;
+
+  padding: 65px 0 55px;
+}
+
+.top-label {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: var(--plum);
+}
+
+.top-label span {
+  width: 38px;
+
+  height: 1px;
+
+  background: var(--gold);
+}
+
+.hero-small {
+  margin: 28px 0 5px;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: var(--muted);
+}
+
+.hero-name {
+  margin: 0;
+
+  line-height: 0.9;
+}
+
+
+/* =========================================================
+   MAHIMA NAME
+========================================================= */
+
+.mahima {
+  display: block;
+
+  font-family: var(--script);
+
+  font-size: clamp(85px, 14vw, 170px);
+
+  color: var(--plum);
+
+  text-shadow:
+    0 12px 30px rgba(72, 43, 58, 0.16);
+}
+
+.sankurathri {
+  display: block;
+
+  margin-top: 16px;
+
+  font-family: var(--display);
+
+  font-size: clamp(26px, 5vw, 52px);
+
+  letter-spacing: 13px;
+
+  color: var(--plum-deep);
+}
+
+
+/* =========================================================
+   NAME DIVIDER
+========================================================= */
+
+.name-divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin: 30px 0 18px;
+}
+
+.name-divider span {
+  width: 90px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold)
+  );
+}
+
+.name-divider span:last-child {
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    transparent
+  );
+}
+
+.name-divider b {
+  color: var(--gold);
+
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   TURNING ONE
+========================================================= */
+
+.turning {
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size: 19px;
+
+  letter-spacing: 6px;
+
+  color: var(--plum);
+}
+
+.turning strong {
+  display: block;
+
+  font-family: var(--serif);
+
+  font-size: 42px;
+
+  letter-spacing: 9px;
+
+  color: var(--blush-deep);
+}
+
+
+/* =========================================================
+   DATE / TIME
+========================================================= */
+
+.hero-date {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin: 30px 0 22px;
+}
+
+.date-block {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.date-block small {
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: var(--muted);
+}
+
+.date-block strong {
+  font-family: var(--serif);
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: var(--plum);
+}
+
+.time-block strong {
+  font-size: 30px;
+
+  color: var(--blush-deep);
+
+  white-space: nowrap;
+}
+
+.date-line {
+  height: 45px;
+
+  width: 1px;
+
+  background: var(--gold-light);
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.hero-location {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin: 15px auto 24px;
+
+  max-width: 500px;
+}
+
+.location-pin {
+  font-size: 19px;
+
+  color: var(--gold);
+
+  margin-top: 1px;
+}
+
+.location-details {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+.location-details > small {
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  color: var(--muted);
+
+  margin-bottom: 3px;
+}
+
+.venue-name {
+  font-family: var(--serif);
+
+  font-size: 18px;
+
+  color: var(--plum);
+
+  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
+
+  padding-bottom: 2px;
+
+  transition: 0.25s;
+}
+
+.venue-name:hover {
+  color: var(--blush-deep);
+
+  border-color: var(--blush);
+}
+
+.address {
+  margin: 5px 0 2px;
+
+  font-family: var(--sans);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   GOOGLE MAPS
+========================================================= */
+
+.maps-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 8px;
+
+  padding: 4px 0;
+
+  color: var(--plum);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  border-bottom: 1px solid rgba(184, 148, 85, 0.4);
+
+  transition: 0.25s ease;
+}
+
+.maps-button b {
+  font-size: 14px;
+
+  font-weight: 300;
+
+  transition: 0.25s ease;
+}
+
+.maps-button:hover {
+  color: var(--blush-deep);
+
+  border-color: var(--blush);
+}
+
+.maps-button:hover b {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   RSVP BUTTON
+========================================================= */
+
+.hero-rsvp-wrapper {
+  margin-top: 22px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.hero-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 15px 28px;
+
+  border: 1px solid var(--blush-deep);
+
+  color: var(--plum);
+
+  background: rgba(255, 255, 255, 0.42);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  transition: 0.35s ease;
+}
+
+.hero-button b {
+  font-size: 18px;
+
+  font-weight: 300;
+
+  transition: 0.35s ease;
+}
+
+.hero-button:hover {
+  background: var(--plum);
+
+  border-color: var(--plum);
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(72, 43, 58, 0.2);
+}
+
+.hero-button:hover b {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 28px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: var(--muted);
+}
+
+.scroll-indicator span {
+  width: 25px;
+
+  height: 1px;
+
+  background: var(--gold);
+}
+
+
+/* =========================================================
+   BUTTERFLIES
+========================================================= */
+
+.butterfly {
+  position: absolute;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: 0.48;
+}
+
+.butterfly-a {
+  top: 17%;
+
+  left: 8%;
+
+  font-size: 22px;
+
+  color: var(--gold);
+
+  animation: drift 8s ease-in-out infinite;
+}
+
+.butterfly-b {
+  right: 6%;
+
+  top: 20%;
+
+  font-size: 48px;
+
+  opacity: 0.3;
+
+  filter: saturate(1.15);
+
+  animation: drift 10s ease-in-out infinite;
+}
+
+.butterfly-c {
+  left: 8%;
+
+  bottom: 17%;
+
+  font-size: 40px;
+
+  opacity: 0.22;
+
+  animation: drift 9s ease-in-out infinite reverse;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-5deg);
+  }
+
+  50% {
+    transform:
+      translate3d(15px, -25px, 0)
+      rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-section {
+  padding: 120px 20px 125px;
+
+  color: var(--ivory);
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(166, 95, 120, 0.35),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(115, 91, 130, 0.35),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      135deg,
+      #482b3a,
+      #5b3547 48%,
+      #3b293d 100%
+    );
+
+  border-top: 1px solid rgba(184, 148, 85, 0.35);
+
+  border-bottom: 1px solid rgba(184, 148, 85, 0.35);
+}
+
+.countdown-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+
+  height: 550px;
+
+  border: 1px solid rgba(216, 194, 143, 0.15);
+
+  border-radius: 50%;
+
+  left: -280px;
+
+  top: -280px;
+}
+
+.countdown-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  border: 1px solid rgba(216, 194, 143, 0.15);
+
+  border-radius: 50%;
+
+  right: -250px;
+
+  bottom: -280px;
+}
+
+.countdown-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(950px, 90%);
+
+  margin: auto;
+}
+
+.countdown-top {
+  text-align: center;
+}
+
+.countdown-section .eyebrow {
+  color: var(--gold-light);
+}
+
+.countdown-section h2 {
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size: clamp(45px, 6vw, 70px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: var(--ivory);
+}
+
+.countdown-section h2 em {
+  color: var(--gold-light);
+}
+
+.countdown {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 55px;
+}
+
+.count-item {
+  min-width: 120px;
+}
+
+.count-item strong {
+  display: block;
+
+  font-family: var(--serif);
+
+  font-size: 65px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: var(--ivory);
+}
+
+.count-item span {
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #d8c2c8;
+}
+
+.count-separator {
+  font-family: var(--serif);
+
+  font-size: 45px;
+
+  color: var(--gold);
+
+  padding-bottom: 20px;
+}
+
+
+/* =========================================================
+   MEMORY
+========================================================= */
+
+.memory-divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin: 70px 0 45px;
+}
+
+.memory-divider span {
+  width: 80px;
+
+  height: 1px;
+
+  background: rgba(184, 148, 85, 0.45);
+}
+
+.memory-divider b {
+  color: var(--gold);
+
+  font-size: 16px;
+
+  font-weight: 400;
+}
+
+.memory-section {
+  max-width: 650px;
+
+  margin: auto;
+}
+
+.memory-label {
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: var(--blush-deep);
+
+  margin: 0 0 18px;
+}
+
+.memory-section h3 {
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size: clamp(48px, 7vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: var(--plum);
+}
+
+.memory-section h3 em {
+  color: var(--lilac-deep);
+}
+
+.memory-text {
+  max-width: 570px;
+
+  margin: 25px auto 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RSVP
+========================================================= */
+
+.rsvp {
+  padding-top: 120px;
+
+  padding-bottom: 130px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(181, 160, 194, 0.2),
+      transparent 28%
+    ),
+
+    var(--ivory);
+}
+
+.rsvp-layout {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 100px;
+
+  align-items: start;
+
+  padding-left: 60px;
+}
+
+.rsvp-intro h2 {
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size: clamp(65px, 8vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  color: var(--plum);
+}
+
+.rsvp-intro > p:not(.eyebrow) {
+  max-width: 320px;
+
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.rsvp-flower {
+  margin-top: 40px;
+
+  color: var(--gold);
+
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   RSVP CARD
+========================================================= */
+
+.rsvp-card {
+  padding: 55px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff7f8
+    );
+
+  box-shadow:
+    0 30px 80px rgba(72, 43, 58, 0.14);
+
+  border: 1px solid rgba(184, 148, 85, 0.28);
+
+  position: relative;
+}
+
+.rsvp-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 1px solid rgba(184, 148, 85, 0.17);
+
+  pointer-events: none;
+}
+
+.rsvp-card form {
+  position: relative;
+
+  z-index: 1;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 9px;
+
+  letter-spacing: 2.5px;
+
+  color: var(--plum);
+
+  font-weight: 500;
+}
+
+.field label small {
+  color: var(--muted);
+
+  font-weight: 300;
+
+  letter-spacing: 1px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  border: 0;
+
+  border-bottom: 1px solid #e5d7dc;
+
+  background: transparent;
+
+  padding: 12px 0;
+
+  outline: none;
+
+  color: var(--ink);
+
+  font-size: 14px;
+
+  border-radius: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blush);
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* =========================================================
+   RSVP CHOICES
+========================================================= */
+
+.choice-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.choice {
+  position: relative;
+
+  cursor: pointer;
+}
+
+.choice input {
+  position: absolute;
+
+  opacity: 0;
+}
+
+.choice span {
+  display: block;
+
+  padding: 17px;
+
+  border: 1px solid #ded2d8;
+
+  background: #fffafa;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: var(--muted);
+
+  transition: 0.25s;
+}
+
+.choice small {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+.choice input:checked + span {
+  background:
+    linear-gradient(
+      135deg,
+      var(--plum),
+      var(--lilac-deep)
+    );
+
+  border-color: var(--plum);
+
+  color: white;
+
+  box-shadow:
+    0 8px 22px rgba(72, 43, 58, 0.2);
+}
+
+
+/* =========================================================
+   GUEST COUNT
 ========================================================= */
 
 .guest-grid {
-  display: none;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
 }
 
-.guest-grid.show {
-  display: grid;
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-button {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 18px 22px;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--plum),
+      var(--plum-deep)
+    );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  letter-spacing: 3px;
+
+  font-size: 10px;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 10px 25px rgba(72, 43, 58, 0.22);
+}
+
+.submit-button b {
+  font-size: 20px;
+
+  font-weight: 300;
+
+  transition: 0.3s;
+}
+
+.submit-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      var(--blush-deep),
+      var(--plum)
+    );
+
+  transform: translateY(-2px);
+}
+
+.submit-button:hover b {
+  transform: translateX(6px);
+}
+
+.form-message {
+  min-height: 20px;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: var(--plum);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  padding: 110px 20px 90px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(201, 140, 159, 0.3),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(181, 160, 194, 0.35),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #ead9df,
+      #ddd2e5
+    );
+
+  border-top: 1px solid rgba(184, 148, 85, 0.28);
+}
+
+.footer-art {
+  font-size: 55px;
+
+  opacity: 0.55;
+
+  margin-bottom: 30px;
+}
+
+.footer-label {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: var(--plum);
+}
+
+.footer h2 {
+  margin: 8px 0;
+
+  font-family: var(--script);
+
+  font-size: clamp(45px, 7vw, 75px);
+
+  font-weight: 400;
+
+  color: var(--plum);
+}
+
+.footer > p:not(.footer-label) {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.footer-line {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  color: var(--gold);
+}
+
+.footer-line span {
+  width: 50px;
+
+  height: 1px;
+
+  background: var(--gold-light);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .section {
+    width: 88%;
+
+    padding: 90px 0;
+  }
+
+  .section-number {
+    top: 35px;
+
+    left: 0;
+  }
+
+  .hero-frame {
+    inset: 15px;
+  }
+
+  .hero-content {
+    padding: 70px 10px 55px;
+  }
+
+  .sankurathri {
+    letter-spacing: 7px;
+  }
+
+  .name-divider span {
+    width: 55px;
+  }
+
+  .rsvp-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-left: 35px;
+  }
+
+  .countdown {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px 10px;
+  }
+
+  .count-separator {
+    display: none;
+  }
+
+  .count-item strong {
+    font-size: 52px;
+  }
+
+  .rsvp-card {
+    padding: 40px 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding-top: 65px;
+  }
+
+  .hero-small {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .mahima {
+    font-size: 82px;
+  }
+
+  .sankurathri {
+    font-size: 24px;
+
+    letter-spacing: 5px;
+  }
+
+  .turning {
+    font-size: 16px;
+
+    letter-spacing: 4px;
+  }
+
+  .turning strong {
+    font-size: 36px;
+  }
+
+  .hero-date {
+    gap: 15px;
+  }
+
+  .date-block strong {
+    font-size: 20px;
+  }
+
+  .time-block strong {
+    font-size: 25px;
+  }
+
+  .hero-location {
+    max-width: 320px;
+
+    margin-bottom: 20px;
+  }
+
+  .venue-name {
+    font-size: 15px;
+  }
+
+  .address {
+    font-size: 11px;
+  }
+
+  .maps-button {
+    margin-top: 7px;
+
+    margin-bottom: 0;
+  }
+
+  .hero-rsvp-wrapper {
+    margin-top: 22px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .countdown-section {
+    padding: 90px 20px;
+  }
+
+  .countdown-section h2 {
+    font-size: 47px;
+  }
+
+  .memory-divider {
+    margin: 55px 0 35px;
+  }
+
+  .memory-section h3 {
+    font-size: 55px;
+  }
+
+  .choice-grid,
+  .guest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-intro h2 {
+    font-size: 75px;
+  }
+
+  .footer h2 {
+    font-size: 47px;
+  }
 }
