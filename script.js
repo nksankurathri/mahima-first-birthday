@@ -23,6 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =====================================================
+     RSVP RADIO BUTTONS
+  ===================================================== */
+
+  const yesRadio =
+    document.querySelector(
+      'input[name="rsvp"][value="yes"]'
+    );
+
+  const noRadio =
+    document.querySelector(
+      'input[name="rsvp"][value="no"]'
+    );
+
+
+  /* =====================================================
      INITIAL STATE
   ===================================================== */
 
@@ -33,38 +48,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =====================================================
-     YES / NO
+     YES
   ===================================================== */
 
-  document
-    .querySelectorAll('input[name="rsvp"]')
-    .forEach(function (radio) {
+  yesRadio.addEventListener("change", function () {
 
-      radio.addEventListener("change", function () {
+    if (!yesRadio.checked) {
+      return;
+    }
 
-        if (this.value === "yes") {
+    guestCountSection.style.display = "grid";
 
-          guestCountSection.style.display = "grid";
+    adultsInput.value = "1";
+    childrenInput.value = "0";
 
-          adultsInput.value = "1";
-          childrenInput.value = "0";
-
-        } else {
-
-          guestCountSection.style.display = "none";
-
-          adultsInput.value = "0";
-          childrenInput.value = "0";
-
-        }
-
-      });
-
-    });
+  });
 
 
   /* =====================================================
-     FORM SUBMIT
+     NO
+  ===================================================== */
+
+  noRadio.addEventListener("change", function () {
+
+    if (!noRadio.checked) {
+      return;
+    }
+
+    guestCountSection.style.display = "none";
+
+    adultsInput.value = "0";
+    childrenInput.value = "0";
+
+  });
+
+
+  /* =====================================================
+     SUBMIT
   ===================================================== */
 
   form.addEventListener("submit", function (event) {
@@ -72,17 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
 
+    /* -----------------------------------------------
+       NAME
+    ------------------------------------------------ */
+
     const guestName =
       document
         .getElementById("guestName")
         .value
         .trim();
-
-
-    const selected =
-      document.querySelector(
-        'input[name="rsvp"]:checked'
-      );
 
 
     if (!guestName) {
@@ -95,7 +113,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    if (!selected) {
+    /* -----------------------------------------------
+       DETERMINE RSVP
+       
+       IMPORTANT:
+       We explicitly check the radio buttons.
+    ------------------------------------------------ */
+
+    let rsvp = "";
+
+
+    if (yesRadio.checked) {
+
+      rsvp = "yes";
+
+    }
+    else if (noRadio.checked) {
+
+      rsvp = "no";
+
+    }
+
+
+    if (rsvp === "") {
 
       formMessage.textContent =
         "Please select Yes or No.";
@@ -105,24 +145,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    const rsvp =
-      selected.value.toLowerCase();
+    console.log(
+      "SELECTED RSVP:",
+      rsvp
+    );
 
 
-    let adults = "0";
-    let children = "0";
+    /* -----------------------------------------------
+       GUEST COUNT
+    ------------------------------------------------ */
+
+    let adults = 0;
+
+    let children = 0;
 
 
     if (rsvp === "yes") {
 
       adults =
-        adultsInput.value || "1";
+        parseInt(
+          adultsInput.value,
+          10
+        ) || 1;
+
 
       children =
-        childrenInput.value || "0";
+        parseInt(
+          childrenInput.value,
+          10
+        ) || 0;
 
     }
 
+
+    /*
+       NO ALWAYS = 0 / 0
+    */
+
+
+    if (rsvp === "no") {
+
+      adults = 0;
+
+      children = 0;
+
+    }
+
+
+    /* -----------------------------------------------
+       OTHER DATA
+    ------------------------------------------------ */
 
     const phone =
       document
@@ -138,108 +210,39 @@ document.addEventListener("DOMContentLoaded", function () {
         .trim();
 
 
-    /* =================================================
-       CREATE HIDDEN IFRAME
-    ================================================= */
+    /* -----------------------------------------------
+       CREATE DATA
+    ------------------------------------------------ */
 
-    const iframe =
-      document.createElement("iframe");
+    const data = {
 
-    iframe.name =
-      "rsvp-submit-frame";
+      guestName: guestName,
 
-    iframe.style.display =
-      "none";
+      rsvp: rsvp,
 
-    document.body.appendChild(iframe);
+      adults: adults,
 
+      children: children,
 
-    /* =================================================
-       CREATE TEMP FORM
-    ================================================= */
+      phone: phone,
 
-    const submitForm =
-      document.createElement("form");
+      message: message
 
-    submitForm.method =
-      "POST";
-
-    submitForm.action =
-      GOOGLE_SCRIPT_URL;
-
-    submitForm.target =
-      "rsvp-submit-frame";
-
-    submitForm.style.display =
-      "none";
+    };
 
 
-    /* =================================================
-       HELPER
-    ================================================= */
-
-    function addField(name, value) {
-
-      const input =
-        document.createElement("input");
-
-      input.type = "hidden";
-
-      input.name = name;
-
-      input.value = value;
-
-      submitForm.appendChild(input);
-
-    }
-
-
-    /* =================================================
-       SEND DATA
-    ================================================= */
-
-    addField(
-      "guestName",
-      guestName
-    );
-
-    addField(
-      "rsvp",
-      rsvp
-    );
-
-    addField(
-      "adults",
-      adults
-    );
-
-    addField(
-      "children",
-      children
-    );
-
-    addField(
-      "phone",
-      phone
-    );
-
-    addField(
-      "message",
-      message
+    console.log(
+      "FINAL RSVP DATA:",
+      data
     );
 
 
-    document.body.appendChild(
-      submitForm
-    );
+    /* -----------------------------------------------
+       BUTTON
+    ------------------------------------------------ */
 
+    submitButton.disabled = true;
 
-    /* =================================================
-       UI
-    ================================================= */
-
-    submitButton.disabled =
-      true;
 
     submitButton.innerHTML = `
       <span>SENDING...</span>
@@ -251,21 +254,34 @@ document.addEventListener("DOMContentLoaded", function () {
       "Sending your RSVP...";
 
 
-    /* =================================================
-       SUBMIT
-    ================================================= */
+    /* -----------------------------------------------
+       SEND TO GOOGLE SHEETS
+    ------------------------------------------------ */
 
-    submitForm.submit();
+    fetch(
+      GOOGLE_SCRIPT_URL,
+      {
 
+        method: "POST",
 
-    /* =================================================
-       SHOW SUCCESS
-       
-       Google Apps Script receives the
-       request through the iframe.
-    ================================================= */
+        mode: "no-cors",
 
-    setTimeout(function () {
+        headers: {
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
+
+        body:
+          JSON.stringify(data)
+
+      }
+    )
+    .then(function () {
+
+      /*
+         With no-cors we can't read the response,
+         but the request was sent.
+      */
 
       formMessage.textContent =
         rsvp === "yes"
@@ -276,15 +292,15 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
 
 
+      guestCountSection.style.display =
+        "none";
+
+
       adultsInput.value =
         "1";
 
       childrenInput.value =
         "0";
-
-
-      guestCountSection.style.display =
-        "none";
 
 
       submitButton.disabled =
@@ -306,16 +322,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }, 3000);
 
+    })
+    .catch(function (error) {
 
-      /*
-         Remove temporary elements
-      */
+      console.error(
+        "RSVP ERROR:",
+        error
+      );
 
-      submitForm.remove();
 
-      iframe.remove();
+      formMessage.textContent =
+        "Unable to submit RSVP. Please try again.";
 
-    }, 1200);
+
+      submitButton.disabled =
+        false;
+
+
+      submitButton.innerHTML = `
+        <span>SEND RSVP</span>
+        <b>→</b>
+      `;
+
+    });
 
   });
 
