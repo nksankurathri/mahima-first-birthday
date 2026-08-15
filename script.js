@@ -37,7 +37,6 @@ function updateCountdown() {
     setCountdownValue("seconds", 0);
 
     return;
-
   }
 
 
@@ -141,9 +140,15 @@ const rsvpForm =
   );
 
 
-const guestNumbers =
+/*
+   IMPORTANT:
+   HTML uses guestCountSection.
+   The old script incorrectly used guestNumbers.
+*/
+
+const guestCountSection =
   document.getElementById(
-    "guestNumbers"
+    "guestCountSection"
   );
 
 
@@ -181,6 +186,24 @@ const rsvpOptions =
   );
 
 
+/*
+   IMPORTANT:
+   Guest count must be hidden when
+   the page first loads.
+*/
+
+if (guestCountSection) {
+
+  guestCountSection.style.display =
+    "none";
+
+}
+
+
+/*
+   Listen for YES / NO selection
+*/
+
 rsvpOptions.forEach(
   option => {
 
@@ -189,37 +212,59 @@ rsvpOptions.forEach(
       function () {
 
 
+        /* ---------------------------------------
+           YES selected
+        --------------------------------------- */
+
         if (
-          this.value === "Yes"
+          this.value === "yes"
         ) {
 
           /*
-             YES selected:
-             default adults = 1
+             Show Adults + Children
           */
 
-          guestNumbers.style.display =
+          guestCountSection.style.display =
             "grid";
 
+
+          /*
+             Default Adults = 1
+          */
 
           adultsSelect.value =
             "1";
 
 
+          /*
+             Default Children = 0
+          */
+
           childrenSelect.value =
             "0";
 
 
-        } else {
+        }
+
+
+        /* ---------------------------------------
+           NO selected
+        --------------------------------------- */
+
+        else {
+
+          /*
+             Hide Adults + Children
+          */
+
+          guestCountSection.style.display =
+            "none";
 
 
           /*
-             NO selected
+             Don't count guests
+             when they cannot attend.
           */
-
-          guestNumbers.style.display =
-            "none";
-
 
           adultsSelect.value =
             "0";
@@ -339,14 +384,22 @@ rsvpForm.addEventListener(
       rsvp:
         rsvp,
 
+      /*
+         YES:
+         use selected counts
+
+         NO:
+         always send 0
+      */
+
       adults:
-        rsvp === "Yes"
-          ? Number(adults)
+        rsvp === "yes"
+          ? Number(adults) || 1
           : 0,
 
       children:
-        rsvp === "Yes"
-          ? Number(children)
+        rsvp === "yes"
+          ? Number(children) || 0
           : 0,
 
       phone:
@@ -363,7 +416,6 @@ rsvpForm.addEventListener(
     --------------------------------------- */
 
     try {
-
 
       await fetch(
         GOOGLE_SCRIPT_URL,
@@ -401,11 +453,15 @@ rsvpForm.addEventListener(
         "#754957";
 
 
+      /* ---------------------------------------
+         Reset form
+      --------------------------------------- */
+
       rsvpForm.reset();
 
 
       /*
-         Restore defaults
+         Restore guest count defaults
       */
 
       adultsSelect.value =
@@ -416,9 +472,18 @@ rsvpForm.addEventListener(
         "0";
 
 
-      guestNumbers.style.display =
-        "grid";
+      /*
+         IMPORTANT:
+         Hide guest count after submission.
+      */
 
+      guestCountSection.style.display =
+        "none";
+
+
+      /* ---------------------------------------
+         Button
+      --------------------------------------- */
 
       submitButton.disabled =
         false;
@@ -446,7 +511,6 @@ rsvpForm.addEventListener(
 
 
     } catch (error) {
-
 
       console.error(
         "RSVP Error:",
