@@ -20,7 +20,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Italiana&family=Parisienne&display=swap"
@@ -28,6 +32,7 @@
   >
 
   <link rel="stylesheet" href="styles.css">
+
 </head>
 
 
@@ -147,12 +152,14 @@
 
       <div class="location-details">
 
-        <small>CELEBRATION VENUE</small>
+        <small>
+          CELEBRATION VENUE
+        </small>
 
 
         <a
           class="venue-name"
-          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
+          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -168,10 +175,11 @@
 
         <a
           class="maps-button"
-          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center"
+          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345"
           target="_blank"
           rel="noopener noreferrer"
         >
+
           VIEW ON GOOGLE MAPS
 
           <b>↗</b>
@@ -398,9 +406,7 @@
 
 
       <h2>
-
         RSVP
-
       </h2>
 
 
@@ -513,13 +519,22 @@
 
 
 
-        <!-- Guest Count -->
+        <!-- =================================================
+             GUEST COUNT
+
+             IMPORTANT:
+             Hidden by default.
+             JavaScript shows this when YES is selected.
+        ================================================== -->
 
         <div
           class="guest-grid"
           id="guestCountSection"
+          style="display: none;"
         >
 
+
+          <!-- Adults -->
 
           <div class="field">
 
@@ -537,6 +552,8 @@
 
           </div>
 
+
+          <!-- Children -->
 
           <div class="field">
 
@@ -564,10 +581,13 @@
         <div class="field">
 
           <label>
+
             PHONE
+
             <small>
               OPTIONAL
             </small>
+
           </label>
 
           <input
@@ -586,10 +606,13 @@
         <div class="field">
 
           <label>
+
             MESSAGE
+
             <small>
               OPTIONAL
             </small>
+
           </label>
 
           <textarea
@@ -680,13 +703,15 @@
 
 
 <!-- =====================================================
-     COUNTDOWN SCRIPT
+     COUNTDOWN
 ===================================================== -->
 
 <script>
 
 const birthdayDate =
-  new Date("September 6, 2026 12:30:00").getTime();
+  new Date(
+    "September 6, 2026 12:30:00"
+  ).getTime();
 
 
 function updateCountdown() {
@@ -694,19 +719,24 @@ function updateCountdown() {
   const now =
     new Date().getTime();
 
+
   const distance =
     birthdayDate - now;
 
 
   if (distance <= 0) {
 
-    document.getElementById("days").textContent = "00";
+    document.getElementById("days")
+      .textContent = "00";
 
-    document.getElementById("hours").textContent = "00";
+    document.getElementById("hours")
+      .textContent = "00";
 
-    document.getElementById("minutes").textContent = "00";
+    document.getElementById("minutes")
+      .textContent = "00";
 
-    document.getElementById("seconds").textContent = "00";
+    document.getElementById("seconds")
+      .textContent = "00";
 
     return;
 
@@ -722,59 +752,73 @@ function updateCountdown() {
 
   const hours =
     Math.floor(
-      (distance %
-        (1000 * 60 * 60 * 24)) /
+      (
+        distance %
+        (1000 * 60 * 60 * 24)
+      ) /
       (1000 * 60 * 60)
     );
 
 
   const minutes =
     Math.floor(
-      (distance %
-        (1000 * 60 * 60)) /
+      (
+        distance %
+        (1000 * 60 * 60)
+      ) /
       (1000 * 60)
     );
 
 
   const seconds =
     Math.floor(
-      (distance %
-        (1000 * 60)) /
+      (
+        distance %
+        (1000 * 60)
+      ) /
       1000
     );
 
 
   document.getElementById("days")
     .textContent =
-    String(days).padStart(2, "0");
+    String(days)
+      .padStart(2, "0");
 
 
   document.getElementById("hours")
     .textContent =
-    String(hours).padStart(2, "0");
+    String(hours)
+      .padStart(2, "0");
 
 
   document.getElementById("minutes")
     .textContent =
-    String(minutes).padStart(2, "0");
+    String(minutes)
+      .padStart(2, "0");
 
 
   document.getElementById("seconds")
     .textContent =
-    String(seconds).padStart(2, "0");
+    String(seconds)
+      .padStart(2, "0");
 
 }
 
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+  updateCountdown,
+  1000
+);
 
 </script>
 
 
+
 <!-- =====================================================
-     YOUR EXISTING GOOGLE SHEETS SCRIPT
+     GOOGLE SHEETS / RSVP SCRIPT
 ===================================================== -->
 
 <script src="script.js"></script>
