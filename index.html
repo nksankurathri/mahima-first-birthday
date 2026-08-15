@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahima Sankurathri | First Birthday</title>
+  <meta name="description" content="You're invited to celebrate Mahima Sankurathri's first birthday." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="petals"></div>
+
+  <header class="hero">
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    <div class="butterfly butterfly-3">🦋</div>
+
+    <div class="hero-card">
+      <p class="eyebrow">YOU'RE INVITED</p>
+      <div class="gold-line"></div>
+      <h1>Mahima</h1>
+      <h2>Sankurathri's</h2>
+      <div class="ribbon">FIRST BIRTHDAY</div>
+      <p class="intro">Please join us as we celebrate our little butterfly's very first birthday.</p>
+      <a class="primary-btn" href="#rsvp">RSVP NOW 🦋</a>
+      <a class="scroll-link" href="#details">View Invitation ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="details" class="section details">
+      <p class="section-kicker">A DAY FULL OF LOVE &amp; JOY</p>
+      <h2>Come Celebrate With Us</h2>
+      <p class="quote">“Little one, so loved, so sweet,<br>please join us to make this day extra special!”</p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="icon">♡</div>
+          <h3>DATE</h3>
+          <p>Sunday<br><strong>September 6th, 2026</strong></p>
+        </div>
+        <div class="info-card">
+          <div class="icon">◷</div>
+          <h3>TIME</h3>
+          <p><strong>12:30 PM</strong></p>
+        </div>
+        <div class="info-card location-card">
+          <div class="icon">⌖</div>
+          <h3>VENUE</h3>
+          <p><strong>William L. Patena Community Center</strong><br>
+          8335 W Jefferson St<br>Peoria, AZ 85345</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="secondary-btn" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345">
+          📍 Get Directions
+        </a>
+        <a class="secondary-btn" target="_blank"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mahima%20Sankurathri%27s%20First%20Birthday&dates=20260906T123000/20260906T153000&details=Please%20join%20us%20to%20celebrate%20Mahima%20Sankurathri%27s%20first%20birthday.&location=William%20L.%20Patena%20Community%20Center%2C%208335%20W%20Jefferson%20St%2C%20Peoria%2C%20AZ%2085345">
+          📅 Add to Calendar
+        </a>
+      </div>
+    </section>
+
+    <section id="rsvp" class="section rsvp-section">
+      <p class="section-kicker">WE WOULD LOVE TO CELEBRATE WITH YOU</p>
+      <h2>RSVP</h2>
+      <p class="section-subtitle">Please let us know if you'll be joining us and help us plan the guest count.</p>
+
+      <form id="rsvpForm" class="rsvp-form">
+        <div class="field">
+          <label for="name">Your Name *</label>
+          <input id="name" name="name" type="text" required placeholder="Enter your name">
+        </div>
+
+        <div class="field">
+          <label>Will you be joining us? *</label>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="attending" value="Yes" required> <span>Yes, we'll be there 🦋</span></label>
+            <label class="choice"><input type="radio" name="attending" value="No"> <span>Sorry, we can't make it</span></label>
+          </div>
+        </div>
+
+        <div id="guestFields" class="guest-fields hidden">
+          <div class="two-col">
+            <div class="field">
+              <label for="adults">Adults *</label>
+              <input id="adults" name="adults" type="number" min="0" max="20" value="1">
+            </div>
+            <div class="field">
+              <label for="children">Children *</label>
+              <input id="children" name="children" type="number" min="0" max="20" value="0">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="childNames">Children's Names <span>(optional)</span></label>
+            <input id="childNames" name="childNames" type="text" placeholder="Example: Anika, Aarav">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number <span>(optional)</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span>(optional)</span></label>
+          <textarea id="message" name="message" rows="3" placeholder="A note for Mahima's family..."></textarea>
+        </div>
+
+        <button class="primary-btn submit-btn" type="submit">SEND RSVP 💕</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
+
+      <div class="privacy-note">Your RSVP is used only to help us plan the celebration.</div>
+    </section>
+
+    <section class="closing section">
+      <div class="floral">✿ ❀ ✿</div>
+      <h2>Thank You!</h2>
+      <p>We can't wait to celebrate Mahima's special day with you.</p>
+      <div class="big-butterfly">🦋</div>
+      <div class="floral">✿ ❀ ✿</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love for Mahima's first birthday ♡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
