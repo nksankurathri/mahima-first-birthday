@@ -1550,3 +1550,14 @@ textarea {
     font-size: 47px;
   }
 }
+/* =========================================================
+   RSVP GUEST COUNT VISIBILITY - FINAL
+========================================================= */
+
+#guestCountSection {
+  display: none;
+}
+
+#guestCountSection[style*="display: grid"] {
+  display: grid;
+}
