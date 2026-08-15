@@ -10,15 +10,6 @@ const GOOGLE_SCRIPT_URL =
    COUNTDOWN
 ========================================================= */
 
-/*
-   September 6, 2026
-   12:30 PM
-
-   Month is 0-based in JavaScript:
-   January = 0
-   September = 8
-*/
-
 const eventDate = new Date(
   2026,
   8,
@@ -31,9 +22,7 @@ const eventDate = new Date(
 
 function updateCountdown() {
 
-
   const now = new Date();
-
 
   const difference =
     eventDate.getTime() -
@@ -42,25 +31,10 @@ function updateCountdown() {
 
   if (difference <= 0) {
 
-    setCountdownValue(
-      "days",
-      0
-    );
-
-    setCountdownValue(
-      "hours",
-      0
-    );
-
-    setCountdownValue(
-      "minutes",
-      0
-    );
-
-    setCountdownValue(
-      "seconds",
-      0
-    );
+    setCountdownValue("days", 0);
+    setCountdownValue("hours", 0);
+    setCountdownValue("minutes", 0);
+    setCountdownValue("seconds", 0);
 
     return;
 
@@ -109,18 +83,15 @@ function updateCountdown() {
     days
   );
 
-
   setCountdownValue(
     "hours",
     hours
   );
 
-
   setCountdownValue(
     "minutes",
     minutes
   );
-
 
   setCountdownValue(
     "seconds",
@@ -135,15 +106,12 @@ function setCountdownValue(
   value
 ) {
 
-
   const element =
     document.getElementById(id);
-
 
   if (!element) {
     return;
   }
-
 
   element.textContent =
     String(value).padStart(
@@ -216,7 +184,6 @@ const rsvpOptions =
 rsvpOptions.forEach(
   option => {
 
-
     option.addEventListener(
       "change",
       function () {
@@ -226,10 +193,9 @@ rsvpOptions.forEach(
           this.value === "Yes"
         ) {
 
-
           /*
-             When YES is selected,
-             default adults to 1.
+             YES selected:
+             default adults = 1
           */
 
           guestNumbers.style.display =
@@ -240,12 +206,15 @@ rsvpOptions.forEach(
             "1";
 
 
+          childrenSelect.value =
+            "0";
+
+
         } else {
 
 
           /*
-             When NO is selected,
-             guest count is hidden.
+             NO selected
           */
 
           guestNumbers.style.display =
@@ -269,26 +238,23 @@ rsvpOptions.forEach(
 
 
 /* =========================================================
-   RSVP FORM SUBMISSION
+   RSVP SUBMISSION
 ========================================================= */
 
 rsvpForm.addEventListener(
   "submit",
   async function (event) {
 
-
     event.preventDefault();
 
 
     /* ---------------------------------------
-       Get form values
+       Values
     --------------------------------------- */
 
     const guestName =
       document
-        .getElementById(
-          "guestName"
-        )
+        .getElementById("guestName")
         .value
         .trim();
 
@@ -301,40 +267,32 @@ rsvpForm.addEventListener(
 
     const adults =
       document
-        .getElementById(
-          "adults"
-        )
+        .getElementById("adults")
         .value;
 
 
     const children =
       document
-        .getElementById(
-          "children"
-        )
+        .getElementById("children")
         .value;
 
 
     const phone =
       document
-        .getElementById(
-          "phone"
-        )
+        .getElementById("phone")
         .value
         .trim();
 
 
     const message =
       document
-        .getElementById(
-          "message"
-        )
+        .getElementById("message")
         .value
         .trim();
 
 
     /* ---------------------------------------
-       Validate
+       Validation
     --------------------------------------- */
 
     if (
@@ -342,10 +300,8 @@ rsvpForm.addEventListener(
       !rsvp
     ) {
 
-
       formMessage.textContent =
         "Please complete the required fields.";
-
 
       return;
 
@@ -353,7 +309,7 @@ rsvpForm.addEventListener(
 
 
     /* ---------------------------------------
-       Disable submit button
+       Disable button
     --------------------------------------- */
 
     submitButton.disabled =
@@ -372,35 +328,29 @@ rsvpForm.addEventListener(
 
 
     /* ---------------------------------------
-       Build data
+       Data
     --------------------------------------- */
 
     const data = {
 
-
       guestName:
         guestName,
 
-
       rsvp:
         rsvp,
-
 
       adults:
         rsvp === "Yes"
           ? Number(adults)
           : 0,
 
-
       children:
         rsvp === "Yes"
           ? Number(children)
           : 0,
 
-
       phone:
         phone,
-
 
       message:
         message
@@ -409,7 +359,7 @@ rsvpForm.addEventListener(
 
 
     /* ---------------------------------------
-       Send to Google Apps Script
+       Google Apps Script
     --------------------------------------- */
 
     try {
@@ -439,17 +389,8 @@ rsvpForm.addEventListener(
       );
 
 
-      /*
-         no-cors does not allow the browser
-         to read the Apps Script response.
-
-         However, the request is still sent
-         to the Google Apps Script endpoint.
-      */
-
-
       /* ---------------------------------------
-         Success message
+         Success
       --------------------------------------- */
 
       formMessage.textContent =
@@ -460,13 +401,11 @@ rsvpForm.addEventListener(
         "#754957";
 
 
-      /* Reset form */
-
       rsvpForm.reset();
 
 
       /*
-         Restore default values
+         Restore defaults
       */
 
       adultsSelect.value =
@@ -481,10 +420,6 @@ rsvpForm.addEventListener(
         "grid";
 
 
-      /* ---------------------------------------
-         Update button
-      --------------------------------------- */
-
       submitButton.disabled =
         false;
 
@@ -496,13 +431,8 @@ rsvpForm.addEventListener(
         `;
 
 
-      /*
-         Return button to normal
-      */
-
       setTimeout(
         () => {
-
 
           submitButton.innerHTML =
             `
@@ -523,10 +453,6 @@ rsvpForm.addEventListener(
         error
       );
 
-
-      /* ---------------------------------------
-         Error message
-      --------------------------------------- */
 
       formMessage.textContent =
         "Something went wrong. Please try again.";
