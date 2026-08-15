@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8" />
 
   <meta
@@ -19,9 +18,7 @@
     Mahima Sankurathri | First Birthday
   </title>
 
-
   <!-- Google Fonts -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -35,9 +32,7 @@
     rel="stylesheet"
   >
 
-
   <!-- Styles -->
-
   <link
     rel="stylesheet"
     href="styles.css"
@@ -68,7 +63,7 @@
 
 
     <!-- ==================================================
-         HERO / INVITATION
+         HERO
     =================================================== -->
 
     <section class="hero">
@@ -133,7 +128,7 @@
         </div>
 
 
-        <!-- Turning one -->
+        <!-- Turning One -->
 
         <p class="turning">
 
@@ -201,7 +196,8 @@
           </span>
 
 
-          <div>
+          <div class="location-details">
+
 
             <small>
               CELEBRATION AT
@@ -209,6 +205,7 @@
 
 
             <a
+              class="venue-name"
               href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345"
               target="_blank"
               rel="noopener"
@@ -228,48 +225,52 @@
             </p>
 
 
+            <!-- Maps link belongs directly to address -->
+
+            <a
+              class="maps-button"
+              href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345"
+              target="_blank"
+              rel="noopener"
+            >
+
+              <span>
+                VIEW ON GOOGLE MAPS
+              </span>
+
+              <b>
+                ↗
+              </b>
+
+            </a>
+
+
           </div>
 
 
         </div>
 
 
-        <!-- Google Maps -->
-
-        <a
-          class="maps-button"
-          href="https://www.google.com/maps/search/?api=1&query=William+L.+Patena+Community+Center%2C+8335+W+Jefferson+St%2C+Peoria%2C+AZ+85345"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <span>
-            VIEW ON GOOGLE MAPS
-          </span>
-
-          <b>
-            ↗
-          </b>
-
-        </a>
-
-
         <!-- RSVP -->
 
-        <a
-          href="#rsvp"
-          class="hero-button"
-        >
+        <div class="hero-rsvp-wrapper">
 
-          <span>
-            RSVP NOW
-          </span>
+          <a
+            href="#rsvp"
+            class="hero-button"
+          >
 
-          <b>
-            →
-          </b>
+            <span>
+              RSVP NOW
+            </span>
 
-        </a>
+            <b>
+              →
+            </b>
+
+          </a>
+
+        </div>
 
 
       </div>
@@ -299,8 +300,6 @@
 
       <div class="countdown-inner">
 
-
-        <!-- Countdown heading -->
 
         <div class="countdown-top">
 
@@ -399,7 +398,6 @@
         </div>
 
 
-
         <!-- Divider -->
 
         <div class="memory-divider">
@@ -415,8 +413,7 @@
         </div>
 
 
-
-        <!-- One little year -->
+        <!-- One Little Year -->
 
         <div class="memory-section">
 
@@ -484,7 +481,7 @@
       <div class="rsvp-layout">
 
 
-        <!-- RSVP introduction -->
+        <!-- Introduction -->
 
         <div class="rsvp-intro">
 
@@ -522,8 +519,7 @@
         </div>
 
 
-
-        <!-- RSVP form -->
+        <!-- RSVP Form -->
 
         <div class="rsvp-card">
 
@@ -531,7 +527,7 @@
           <form id="rsvpForm">
 
 
-            <!-- Guest name -->
+            <!-- Guest Name -->
 
             <div class="field">
 
@@ -562,9 +558,7 @@
 
 
               <label>
-
                 WILL YOU JOIN US?
-
               </label>
 
 
@@ -628,13 +622,15 @@
 
 
 
-            <!-- Guest count -->
+            <!-- Guest Numbers -->
 
             <div
               id="guestNumbers"
               class="guest-grid"
             >
 
+
+              <!-- Adults -->
 
               <div class="field">
 
@@ -690,6 +686,8 @@
               </div>
 
 
+
+              <!-- Children -->
 
               <div class="field">
 
@@ -890,8 +888,6 @@
 
   </main>
 
-
-  <!-- JavaScript -->
 
   <script src="script.js"></script>
 
