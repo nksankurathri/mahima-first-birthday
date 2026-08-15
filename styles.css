@@ -20,12 +20,13 @@
   --display: "Italiana", serif;
   --script: "Parisienne", cursive;
   --sans: "DM Sans", sans-serif;
+
 }
 
 
-/* ==============================
+/* =========================================
    RESET
-============================== */
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -52,6 +53,7 @@ body {
   line-height: 1.6;
 
   overflow-x: hidden;
+
 }
 
 
@@ -69,9 +71,9 @@ textarea {
 }
 
 
-/* ==============================
+/* =========================================
    GLOBAL
-============================== */
+========================================= */
 
 .section {
 
@@ -82,6 +84,7 @@ textarea {
   padding: 125px 0;
 
   position: relative;
+
 }
 
 
@@ -100,6 +103,7 @@ textarea {
   color: var(--gold);
 
   letter-spacing: 2px;
+
 }
 
 
@@ -114,6 +118,7 @@ textarea {
   color: var(--rose);
 
   font-weight: 500;
+
 }
 
 
@@ -124,12 +129,13 @@ em {
   font-weight: 400;
 
   color: var(--rose);
+
 }
 
 
-/* ==============================
+/* =========================================
    HERO
-============================== */
+========================================= */
 
 .hero {
 
@@ -160,6 +166,7 @@ em {
     ),
 
     var(--paper);
+
 }
 
 
@@ -172,6 +179,7 @@ em {
   border: 1px solid rgba(183,152,104,.25);
 
   pointer-events: none;
+
 }
 
 
@@ -189,6 +197,7 @@ em {
   border-color: var(--gold-light);
 
   border-style: solid;
+
 }
 
 
@@ -199,6 +208,7 @@ em {
   top: -1px;
 
   border-width: 2px 0 0 2px;
+
 }
 
 
@@ -209,6 +219,7 @@ em {
   bottom: -1px;
 
   border-width: 0 2px 2px 0;
+
 }
 
 
@@ -222,7 +233,8 @@ em {
 
   z-index: 2;
 
-  padding: 70px 0 60px;
+  padding: 65px 0 55px;
+
 }
 
 
@@ -241,6 +253,7 @@ em {
   letter-spacing: 4px;
 
   color: var(--rose-dark);
+
 }
 
 
@@ -251,18 +264,20 @@ em {
   height: 1px;
 
   background: var(--gold-light);
+
 }
 
 
 .hero-small {
 
-  margin: 30px 0 5px;
+  margin: 28px 0 5px;
 
   font-size: 9px;
 
   letter-spacing: 4px;
 
   color: var(--muted);
+
 }
 
 
@@ -271,6 +286,7 @@ em {
   margin: 0;
 
   line-height: .9;
+
 }
 
 
@@ -285,7 +301,9 @@ em {
   color: var(--rose-dark);
 
   text-shadow:
+
     0 12px 30px rgba(117,73,87,.10);
+
 }
 
 
@@ -302,6 +320,7 @@ em {
   letter-spacing: 13px;
 
   color: var(--ink);
+
 }
 
 
@@ -316,6 +335,7 @@ em {
   gap: 18px;
 
   margin: 30px 0 18px;
+
 }
 
 
@@ -326,6 +346,7 @@ em {
   height: 1px;
 
   background: rgba(183,152,104,.55);
+
 }
 
 
@@ -336,6 +357,7 @@ em {
   font-size: 13px;
 
   font-weight: 400;
+
 }
 
 
@@ -348,6 +370,7 @@ em {
   font-size: 19px;
 
   letter-spacing: 6px;
+
 }
 
 
@@ -362,10 +385,13 @@ em {
   letter-spacing: 9px;
 
   color: var(--rose-dark);
+
 }
 
 
-/* DATE */
+/* =========================================
+   DATE + TIME
+========================================= */
 
 .hero-date {
 
@@ -377,37 +403,54 @@ em {
 
   gap: 30px;
 
-  margin: 30px 0 24px;
+  margin: 30px 0 22px;
+
 }
 
 
-.hero-date div {
+.date-block {
 
   display: flex;
 
   flex-direction: column;
 
   gap: 3px;
+
 }
 
 
-.hero-date small {
+.date-block small {
 
   font-size: 8px;
 
   letter-spacing: 3px;
 
   color: var(--muted);
+
 }
 
 
-.hero-date strong {
+.date-block strong {
 
   font-family: var(--serif);
 
   font-size: 24px;
 
   font-weight: 500;
+
+  letter-spacing: 1px;
+
+}
+
+
+.time-block strong {
+
+  font-size: 30px;
+
+  color: var(--rose-dark);
+
+  white-space: nowrap;
+
 }
 
 
@@ -418,10 +461,13 @@ em {
   width: 1px;
 
   background: var(--gold-light);
+
 }
 
 
-/* LOCATION */
+/* =========================================
+   LOCATION
+========================================= */
 
 .hero-location {
 
@@ -429,31 +475,36 @@ em {
 
   justify-content: center;
 
-  align-items: center;
+  align-items: flex-start;
 
   gap: 10px;
 
-  margin: 10px auto 28px;
+  margin: 15px auto 5px;
 
-  max-width: 450px;
+  max-width: 500px;
+
 }
 
 
 .location-pin {
 
-  font-size: 18px;
+  font-size: 19px;
 
   color: var(--gold);
+
+  margin-top: 1px;
+
 }
 
 
-.hero-location div {
+.hero-location > div {
 
   display: flex;
 
   flex-direction: column;
 
   text-align: left;
+
 }
 
 
@@ -466,6 +517,7 @@ em {
   color: var(--muted);
 
   margin-bottom: 3px;
+
 }
 
 
@@ -473,7 +525,7 @@ em {
 
   font-family: var(--serif);
 
-  font-size: 17px;
+  font-size: 18px;
 
   color: var(--rose-dark);
 
@@ -482,6 +534,7 @@ em {
   padding-bottom: 2px;
 
   transition: .25s;
+
 }
 
 
@@ -490,10 +543,84 @@ em {
   color: var(--gold);
 
   border-color: var(--gold);
+
 }
 
 
-/* HERO BUTTON */
+.address {
+
+  margin: 5px 0 0;
+
+  font-family: var(--sans);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+
+}
+
+
+/* =========================================
+   GOOGLE MAPS BUTTON
+========================================= */
+
+.maps-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 5px 0 23px;
+
+  padding: 7px 0;
+
+  color: var(--rose-dark);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  border-bottom: 1px solid rgba(117,73,87,.25);
+
+  transition: .25s ease;
+
+}
+
+
+.maps-button b {
+
+  font-size: 15px;
+
+  font-weight: 300;
+
+  transition: .25s ease;
+
+}
+
+
+.maps-button:hover {
+
+  color: var(--gold);
+
+  border-color: var(--gold);
+
+}
+
+
+.maps-button:hover b {
+
+  transform: translate(3px, -3px);
+
+}
+
+
+/* =========================================
+   HERO RSVP BUTTON
+========================================= */
 
 .hero-button {
 
@@ -514,6 +641,7 @@ em {
   letter-spacing: 3px;
 
   transition: .35s ease;
+
 }
 
 
@@ -524,6 +652,7 @@ em {
   font-weight: 300;
 
   transition: .35s ease;
+
 }
 
 
@@ -532,16 +661,20 @@ em {
   background: var(--rose-dark);
 
   color: white;
+
 }
 
 
 .hero-button:hover b {
 
   transform: translateX(5px);
+
 }
 
 
-/* SCROLL */
+/* =========================================
+   SCROLL
+========================================= */
 
 .scroll-indicator {
 
@@ -564,6 +697,7 @@ em {
   letter-spacing: 3px;
 
   color: var(--muted);
+
 }
 
 
@@ -574,12 +708,13 @@ em {
   height: 1px;
 
   background: var(--gold);
+
 }
 
 
-/* ==============================
+/* =========================================
    BUTTERFLIES
-============================== */
+========================================= */
 
 .butterfly {
 
@@ -590,6 +725,7 @@ em {
   pointer-events: none;
 
   opacity: .45;
+
 }
 
 
@@ -604,6 +740,7 @@ em {
   color: var(--gold);
 
   animation: drift 8s ease-in-out infinite;
+
 }
 
 
@@ -618,6 +755,7 @@ em {
   opacity: .20;
 
   animation: drift 10s ease-in-out infinite;
+
 }
 
 
@@ -632,6 +770,7 @@ em {
   opacity: .16;
 
   animation: drift 9s ease-in-out infinite reverse;
+
 }
 
 
@@ -652,12 +791,13 @@ em {
       rotate(5deg);
 
   }
+
 }
 
 
-/* ==============================
+/* =========================================
    COUNTDOWN
-============================== */
+========================================= */
 
 .countdown-section {
 
@@ -672,6 +812,7 @@ em {
   position: relative;
 
   overflow: hidden;
+
 }
 
 
@@ -692,6 +833,7 @@ em {
   left: -280px;
 
   top: -280px;
+
 }
 
 
@@ -712,6 +854,7 @@ em {
   right: -250px;
 
   bottom: -280px;
+
 }
 
 
@@ -724,18 +867,21 @@ em {
   width: min(950px, 90%);
 
   margin: auto;
+
 }
 
 
 .countdown-top {
 
   text-align: center;
+
 }
 
 
 .countdown-section .eyebrow {
 
   color: var(--gold-light);
+
 }
 
 
@@ -750,12 +896,14 @@ em {
   font-weight: 400;
 
   line-height: .95;
+
 }
 
 
 .countdown-section h2 em {
 
   color: #e5c6ce;
+
 }
 
 
@@ -770,12 +918,14 @@ em {
   justify-content: center;
 
   margin-top: 55px;
+
 }
 
 
 .count-item {
 
   min-width: 120px;
+
 }
 
 
@@ -790,6 +940,7 @@ em {
   font-weight: 400;
 
   line-height: 1;
+
 }
 
 
@@ -800,6 +951,7 @@ em {
   letter-spacing: 3px;
 
   color: #d9bdc5;
+
 }
 
 
@@ -812,10 +964,13 @@ em {
   color: var(--gold-light);
 
   padding-bottom: 20px;
+
 }
 
 
-/* MEMORY SECTION */
+/* =========================================
+   MEMORY SECTION
+========================================= */
 
 .memory-divider {
 
@@ -828,6 +983,7 @@ em {
   gap: 18px;
 
   margin: 70px 0 45px;
+
 }
 
 
@@ -838,6 +994,7 @@ em {
   height: 1px;
 
   background: rgba(214,194,155,.45);
+
 }
 
 
@@ -848,6 +1005,7 @@ em {
   font-size: 16px;
 
   font-weight: 400;
+
 }
 
 
@@ -856,6 +1014,7 @@ em {
   max-width: 650px;
 
   margin: auto;
+
 }
 
 
@@ -868,6 +1027,7 @@ em {
   color: var(--gold-light);
 
   margin: 0 0 18px;
+
 }
 
 
@@ -882,12 +1042,14 @@ em {
   font-weight: 400;
 
   line-height: .95;
+
 }
 
 
 .memory-section h3 em {
 
   color: #e5c6ce;
+
 }
 
 
@@ -902,18 +1064,20 @@ em {
   font-size: 14px;
 
   line-height: 1.8;
+
 }
 
 
-/* ==============================
+/* =========================================
    RSVP
-============================== */
+========================================= */
 
 .rsvp {
 
   padding-top: 120px;
 
   padding-bottom: 130px;
+
 }
 
 
@@ -928,6 +1092,7 @@ em {
   align-items: start;
 
   padding-left: 60px;
+
 }
 
 
@@ -942,6 +1107,7 @@ em {
   font-weight: 400;
 
   line-height: .82;
+
 }
 
 
@@ -954,6 +1120,7 @@ em {
   color: var(--muted);
 
   font-size: 14px;
+
 }
 
 
@@ -964,10 +1131,13 @@ em {
   color: var(--gold);
 
   font-size: 30px;
+
 }
 
 
-/* FORM CARD */
+/* =========================================
+   RSVP CARD
+========================================= */
 
 .rsvp-card {
 
@@ -976,11 +1146,13 @@ em {
   background: white;
 
   box-shadow:
+
     0 30px 80px rgba(72,45,52,.10);
 
   border: 1px solid rgba(183,152,104,.18);
 
   position: relative;
+
 }
 
 
@@ -995,6 +1167,7 @@ em {
   border: 1px solid rgba(183,152,104,.15);
 
   pointer-events: none;
+
 }
 
 
@@ -1003,12 +1176,14 @@ em {
   position: relative;
 
   z-index: 1;
+
 }
 
 
 .field {
 
   margin-bottom: 24px;
+
 }
 
 
@@ -1025,6 +1200,7 @@ em {
   color: var(--rose-dark);
 
   font-weight: 500;
+
 }
 
 
@@ -1035,6 +1211,7 @@ em {
   font-weight: 300;
 
   letter-spacing: 1px;
+
 }
 
 
@@ -1059,6 +1236,7 @@ textarea {
   font-size: 14px;
 
   border-radius: 0;
+
 }
 
 
@@ -1067,16 +1245,20 @@ select:focus,
 textarea:focus {
 
   border-color: var(--rose);
+
 }
 
 
 textarea {
 
   resize: vertical;
+
 }
 
 
-/* RSVP CHOICES */
+/* =========================================
+   RSVP CHOICES
+========================================= */
 
 .choice-grid {
 
@@ -1085,6 +1267,7 @@ textarea {
   grid-template-columns: 1fr 1fr;
 
   gap: 10px;
+
 }
 
 
@@ -1093,6 +1276,7 @@ textarea {
   position: relative;
 
   cursor: pointer;
+
 }
 
 
@@ -1101,6 +1285,7 @@ textarea {
   position: absolute;
 
   opacity: 0;
+
 }
 
 
@@ -1121,6 +1306,7 @@ textarea {
   color: var(--muted);
 
   transition: .25s;
+
 }
 
 
@@ -1133,6 +1319,7 @@ textarea {
   font-size: 7px;
 
   letter-spacing: 1px;
+
 }
 
 
@@ -1143,10 +1330,13 @@ textarea {
   border-color: var(--rose-dark);
 
   color: white;
+
 }
 
 
-/* GUEST COUNT */
+/* =========================================
+   GUEST COUNT
+========================================= */
 
 .guest-grid {
 
@@ -1155,10 +1345,13 @@ textarea {
   grid-template-columns: 1fr 1fr;
 
   gap: 25px;
+
 }
 
 
-/* SUBMIT */
+/* =========================================
+   SUBMIT
+========================================= */
 
 .submit-button {
 
@@ -1187,6 +1380,7 @@ textarea {
   font-size: 10px;
 
   transition: .3s;
+
 }
 
 
@@ -1197,18 +1391,21 @@ textarea {
   font-weight: 300;
 
   transition: .3s;
+
 }
 
 
 .submit-button:hover {
 
   background: #5f3945;
+
 }
 
 
 .submit-button:hover b {
 
   transform: translateX(6px);
+
 }
 
 
@@ -1223,12 +1420,13 @@ textarea {
   font-size: 12px;
 
   color: var(--rose-dark);
+
 }
 
 
-/* ==============================
+/* =========================================
    FOOTER
-============================== */
+========================================= */
 
 .footer {
 
@@ -1237,6 +1435,7 @@ textarea {
   text-align: center;
 
   background: #f1e5e5;
+
 }
 
 
@@ -1247,6 +1446,7 @@ textarea {
   opacity: .35;
 
   margin-bottom: 30px;
+
 }
 
 
@@ -1259,6 +1459,7 @@ textarea {
   letter-spacing: 4px;
 
   color: var(--rose-dark);
+
 }
 
 
@@ -1273,6 +1474,7 @@ textarea {
   font-weight: 400;
 
   color: var(--rose-dark);
+
 }
 
 
@@ -1283,6 +1485,7 @@ textarea {
   color: var(--muted);
 
   font-size: 13px;
+
 }
 
 
@@ -1299,6 +1502,7 @@ textarea {
   margin-top: 30px;
 
   color: var(--gold);
+
 }
 
 
@@ -1309,20 +1513,23 @@ textarea {
   height: 1px;
 
   background: var(--gold-light);
+
 }
 
 
-/* ==============================
+/* =========================================
    TABLET
-============================== */
+========================================= */
 
 @media (max-width: 800px) {
+
 
   .section {
 
     width: 88%;
 
     padding: 90px 0;
+
   }
 
 
@@ -1331,40 +1538,45 @@ textarea {
     top: 35px;
 
     left: 0;
+
   }
 
 
   .hero-frame {
 
     inset: 15px;
+
   }
 
 
   .hero-content {
 
     padding: 70px 10px 55px;
+
   }
 
 
   .sankurathri {
 
     letter-spacing: 7px;
+
   }
 
 
   .name-divider span {
 
     width: 55px;
+
   }
 
 
   .hero-location a {
 
     font-size: 16px;
+
   }
 
 
-  .intro-layout,
   .rsvp-layout {
 
     grid-template-columns: 1fr;
@@ -1372,6 +1584,7 @@ textarea {
     gap: 45px;
 
     padding-left: 35px;
+
   }
 
 
@@ -1382,44 +1595,51 @@ textarea {
     grid-template-columns: 1fr 1fr;
 
     gap: 35px 10px;
+
   }
 
 
   .count-separator {
 
     display: none;
+
   }
 
 
   .count-item strong {
 
     font-size: 52px;
+
   }
 
 
   .rsvp-card {
 
     padding: 40px 25px;
+
   }
 
 }
 
 
-/* ==============================
+/* =========================================
    MOBILE
-============================== */
+========================================= */
 
 @media (max-width: 500px) {
+
 
   .hero {
 
     min-height: 100svh;
+
   }
 
 
   .hero-content {
 
     padding-top: 65px;
+
   }
 
 
@@ -1428,12 +1648,14 @@ textarea {
     font-size: 7px;
 
     letter-spacing: 2px;
+
   }
 
 
   .mahima {
 
     font-size: 82px;
+
   }
 
 
@@ -1442,6 +1664,7 @@ textarea {
     font-size: 24px;
 
     letter-spacing: 5px;
+
   }
 
 
@@ -1450,66 +1673,98 @@ textarea {
     font-size: 16px;
 
     letter-spacing: 4px;
+
   }
 
 
   .turning strong {
 
     font-size: 36px;
+
   }
 
 
   .hero-date {
 
-    gap: 18px;
+    gap: 15px;
+
   }
 
 
-  .hero-date strong {
+  .date-block strong {
 
     font-size: 20px;
+
+  }
+
+
+  .time-block strong {
+
+    font-size: 25px;
+
   }
 
 
   .hero-location {
 
     max-width: 320px;
+
   }
 
 
   .hero-location a {
 
     font-size: 15px;
+
+  }
+
+
+  .hero-location .address {
+
+    font-size: 11px;
+
+  }
+
+
+  .maps-button {
+
+    margin-bottom: 22px;
+
   }
 
 
   .scroll-indicator {
 
     display: none;
+
   }
 
 
   .countdown-section {
 
     padding: 90px 20px;
+
   }
 
 
   .countdown-section h2 {
 
     font-size: 47px;
+
   }
 
 
   .memory-divider {
 
     margin: 55px 0 35px;
+
   }
 
 
   .memory-section h3 {
 
     font-size: 55px;
+
   }
 
 
@@ -1517,18 +1772,21 @@ textarea {
   .guest-grid {
 
     grid-template-columns: 1fr;
+
   }
 
 
   .rsvp-intro h2 {
 
     font-size: 75px;
+
   }
 
 
   .footer h2 {
 
     font-size: 47px;
+
   }
 
 }
