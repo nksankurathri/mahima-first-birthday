@@ -24,8 +24,9 @@ function updateCountdown() {
 
   const now = new Date();
 
-  let difference =
-    eventDate.getTime() - now.getTime();
+  const difference =
+    eventDate.getTime() -
+    now.getTime();
 
 
   if (difference <= 0) {
@@ -208,6 +209,7 @@ rsvpForm.addEventListener(
 
 
     submitButton.disabled = true;
+
 
     submitButton.innerHTML =
       "<span>SENDING...</span><b>...</b>";
